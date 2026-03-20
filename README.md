@@ -18,6 +18,7 @@ OpenCode suporta skills via `SKILL.md` com frontmatter YAML. As skills abaixo fo
 | `interface-design` | [Dammyjay93/interface-design](https://github.com/Dammyjay93/interface-design) | ✅ Compatível | Design de UI com memória de decisões entre sessões |
 | `finishing-a-branch` | [obra/superpowers](https://github.com/obra/superpowers) | ✅ Compatível | Checklist antes de criar PR |
 | `firecrawl-web` | [firecrawl CLI](https://docs.firecrawl.dev/sdks/cli) | ✅ Compatível | Web scraping e pesquisa via CLI |
+| `dev-cli-tools` | curado (dev.to, awesome-cli-apps) | ✅ Compatível | Guia de CLIs essenciais por stack — Git, Node, Python, Docker, APIs |
 
 ### MCP Servers
 
@@ -128,6 +129,30 @@ Acesso ao Firecrawl CLI para scraping, busca web, mapeamento de URLs e pesquisa 
 
 ---
 
+### dev-cli-tools — Guia de CLIs para projetos dev
+
+Referência completa de CLIs organizadas por contexto: universais, por stack (Node, Python, Docker, APIs, Cloud) e por situação. Inclui comandos de instalação, aliases úteis e checklist de máquina nova.
+
+**Quando ativar:**
+- Ao configurar ambiente de um novo projeto
+- Quando o usuário pergunta "que ferramentas instalar"
+- Ao onboarding de um novo desenvolvedor
+- Para recomendar ferramentas específicas por stack
+
+**Categorias cobertas:**
+- Git & versionamento (`gh`, `lazygit`, `git-delta`)
+- Busca e navegação (`ripgrep`, `fd`, `fzf`, `bat`, `eza`, `zoxide`)
+- Node.js (`fnm`, `pnpm`, `tsx`, `ncu`)
+- Python (`uv`, `ruff`, `pyenv`)
+- Docker/K8s (`lazydocker`, `k9s`, `ctop`, `dive`)
+- APIs (`httpie`, `xh`, `hurl`, `websocat`)
+- Bancos de dados (`pgcli`, `mycli`, `usql`)
+- Cloud (`awscli`, `ngrok`, `mkcert`, `cloudflared`)
+- Segurança (`gitleaks`, `trufflehog`, `age`)
+- Dados (`jq`, `fx`, `gron`, `dasel`, `visidata`)
+
+---
+
 ## MCP: Playwright
 
 Automação de browser via MCP. Melhor para loops agênticos longos com estado persistente.
@@ -161,7 +186,8 @@ agents-skills-to-opencode/
 │       ├── test-driven-development/SKILL.md
 │       ├── interface-design/SKILL.md
 │       ├── finishing-a-branch/SKILL.md
-│       └── firecrawl-web/SKILL.md
+│       ├── firecrawl-web/SKILL.md
+│       └── dev-cli-tools/SKILL.md
 ├── mcp/
 │   ├── playwright.json
 │   └── README.md
