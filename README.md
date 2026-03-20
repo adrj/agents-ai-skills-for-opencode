@@ -19,6 +19,14 @@ OpenCode suporta skills via `SKILL.md` com frontmatter YAML. As skills abaixo fo
 | `finishing-a-branch` | [obra/superpowers](https://github.com/obra/superpowers) | ✅ Compatível | Checklist antes de criar PR |
 | `firecrawl-web` | [firecrawl CLI](https://docs.firecrawl.dev/sdks/cli) | ✅ Compatível | Web scraping e pesquisa via CLI |
 | `dev-cli-tools` | curado (dev.to, awesome-cli-apps) | ✅ Compatível | Guia de CLIs essenciais por stack — Git, Node, Python, Docker, APIs |
+| `agent-memory` | [awesome-opencode/agent-memory](https://github.com/joshuadavidthomas/opencode-agent-memory) | ✅ Compatível | Memória persistente auto-editável inspirada no Letta |
+| `dynamic-context-pruning` | [awesome-opencode/dynamic-context-pruning](https://github.com/Tarquinen/opencode-dynamic-context-pruning) | ✅ Compatível | Otimização de tokens removendo saídas obsoletas |
+| `opencode-mem` | [awesome-opencode/opencode-mem](https://github.com/tickernelz/opencode-mem) | ✅ Compatível | Sistema de memória persistente com banco de dados vetorial |
+| `context-analysis` | [awesome-opencode/context-analysis](https://github.com/IgorWarzocha/Opencode-Context-Analysis-Plugin) | ✅ Compatível | Análise detalhada de uso de tokens e custos |
+| `opencode-roadmap` | [awesome-opencode/opencode-roadmap](https://github.com/IgorWarzocha/Opencode-Roadmap) | ✅ Compatível | Planejamento estratégico e coordenação multi-agente |
+| `pocket-universe` | [awesome-opencode/pocket-universe](https://github.com/spoons-and-mirrors/pocket-universe) | ✅ Compatível | Agentes assíncronos resilientes em universos isolados |
+| `subtask2` | [awesome-opencode/subtask2](https://github.com/spoons-and-mirrors/subtask2) | ✅ Compatível | Sistema avançado de orquestração com controle de fluxo granular |
+| `tokenscope` | [awesome-opencode/tokenscope](https://github.com/ramtinJ95/opencode-tokenscope) | ✅ Compatível | Análise abrangente de tokens e rastreamento de custos |
 
 ### MCP Servers
 
@@ -142,15 +150,111 @@ Referência completa de CLIs organizadas por contexto: universais, por stack (No
 **Categorias cobertas:**
 - Git & versionamento (`gh`, `lazygit`, `git-delta`)
 - Busca e navegação (`ripgrep`, `fd`, `fzf`, `bat`, `eza`, `zoxide`)
-- Node.js (`fnm`, `pnpm`, `tsx`, `ncu`)
-- Python (`uv`, `ruff`, `pyenv`)
+- Node.js (`fnm`, `pnpm`, `tsx`, `npm-check-updates`, `np`, `release-it`)
+- Python (`uv`, `ruff`, `pyenv`, `httpie`, `rich`)
 - Java/Spring Boot (`sdkman`, JDK Temurin, `mvnd`, `spring` CLI, `quarkus`, `jbang`, `flyway`)
 - Docker/K8s (`lazydocker`, `k9s`, `ctop`, `dive`)
-- APIs (`httpie`, `xh`, `hurl`, `websocat`)
+- APIs (`httpie`, `xh`, `hurl`, `websocat`, `curlie`)
 - Bancos de dados (`pgcli`, `mycli`, `usql`)
-- Cloud (`awscli`, `ngrok`, `mkcert`, `cloudflared`)
-- Segurança (`gitleaks`, `trufflehog`, `age`)
+- Cloud (`awscli`, `ngrok`, `mkcert`, `cloudflared`, `gitleaks`)
+- Segurança (`gitleaks`, `trufflehog`, `age`, `op`)
 - Dados (`jq`, `fx`, `gron`, `dasel`, `visidata`)
+
+---
+
+### agent-memory — Memória persistente auto-editável
+
+Blocos de memória persistentes e editáveis automaticamente inspirados nos agentes Letta. Permite ao agente manter memória que persiste entre sessões e pode ser modificada pelo próprio agente durante a operação.
+
+**Quando ativar:**
+- Para lembrar informações entre múltiplas sessões
+- Para criar notas ou documentação persistentes
+- Para armazenar informações complexas que não cabem em um napkin
+- Para construir uma base de conhecimento que cresce ao longo do tempo
+
+---
+
+### dynamic-context-pruning — Otimização de contexto
+
+Otimiza o uso de tokens eliminando saídas de ferramentas obsoletas do contexto da conversa, reduzindo o consumo de tokens enquanto mantém informações relevantes para melhor desempenho.
+
+**Quando ativar:**
+- Em conversas longas com muitas chamadas de ferramentas
+- Quando o uso de tokens se torna uma preocupação
+- Para manter desempenho enquanto reduz custos
+- Ao trabalhar com modelos que têm janelas de contexto limitadas
+
+---
+
+### opencode-mem — Sistema de memória vetorial
+
+Sistema de memória persistente com banco de dados vetorial para retenção de contexto de longo prazo entre sessões, com escopos duplos de memória, interface web e sistema de captura automática.
+
+**Quando ativar:**
+- Para retenção de contexto de longo prazo entre sessões
+- Ao trabalhar em projetos complexos que requerem retenção de contexto
+- Para capturar automaticamente informações importantes
+- Para pesquisar através de contexto e decisões históricas
+
+---
+
+### context-analysis — Análise de contexto e tokens
+
+Análise detalhada do uso de tokens em sessões de IA, ajudando a entender padrões de consumo, rastrear custos e identificar oportunidades de otimização.
+
+**Quando ativar:**
+- Para entender padrões de consumo de tokens
+- Quando o monitoramento de custos se torna importante
+- Para otimizar a eficiência das sessões
+- Para comparar diferentes abordagens em termos de eficiência de tokens
+
+---
+
+### opencode-roadmap — Planejamento estratégico
+
+Plugin de planejamento estratégico e coordenação multiagente com gerenciamento de cronograma, acompanhamento de marcos e alocação de recursos.
+
+**Quando ativar:**
+- Ao planejar projetos complexos com múltiplos componentes
+- Para coordenar trabalho entre múltiplos agentes ou membros da equipe
+- Para visualizar cronogramas e dependências do projeto
+- Para gerenciar alocação de recursos e planejamento de capacidade
+
+---
+
+### pocket-universe — Agentes assíncronos resilientes
+
+Plugin que estende o paradigma nativo de subagentes do OpenCode para fornecer agentes assíncronos, resilientes e fechados em loop que podem bloquear a execução do thread principal.
+
+**Quando ativar:**
+- Para executar tarefas longas ou complexas de forma assíncrona
+- Para isolar operações arriscadas em um ambiente controlado
+- Para criar sistemas fechados que operam continuamente
+- Quando é necessário bloquear a execução do thread principal para operações críticas
+
+---
+
+### subtask2 — Orquestração avançada
+
+Sistema de orquestração que estende os comandos /commands do OpenCode em um poderoso sistema com controle de fluxo granular, execução paralela e tratamento avançado de erros.
+
+**Quando ativar:**
+- Para orquestrar fluxos de trabalho complexos com múltiplos passos
+- Para controle granular sobre o fluxo de execução e condições
+- Para execução paralela de tarefas independentes
+- Para tratamento avançado de erros e mecanismos de recuperação
+
+---
+
+### tokenscope — Análise e rastreamento de custos
+
+Análise abrangente de tokens e rastreamento de custos para sessões do OpenCode, oferecendo insights detalhados sobre padrões de uso, custos por provedor e oportunidades de otimização.
+
+**Quando ativar:**
+- Para análise detalhada de padrões de consumo de tokens
+- Quando o rastreamento de custos e gestão orçamentária é importante
+- Para otimizar o uso de tokens entre sessões
+- Para comparar custos entre diferentes provedores de IA
 
 ---
 
@@ -188,7 +292,15 @@ agents-skills-to-opencode/
 │       ├── interface-design/SKILL.md
 │       ├── finishing-a-branch/SKILL.md
 │       ├── firecrawl-web/SKILL.md
-│       └── dev-cli-tools/SKILL.md
+│       ├── dev-cli-tools/SKILL.md
+│       ├── agent-memory/SKILL.md
+│       ├── dynamic-context-pruning/SKILL.md
+│       ├── opencode-mem/SKILL.md
+│       ├── context-analysis/SKILL.md
+│       ├── opencode-roadmap/SKILL.md
+│       ├── pocket-universe/SKILL.md
+│       ├── subtask2/SKILL.md
+│       └── tokenscope/SKILL.md
 ├── mcp/
 │   ├── playwright.json
 │   └── README.md
