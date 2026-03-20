@@ -67,13 +67,37 @@ cp -r .opencode/ /caminho/do/seu/projeto/
 
 O OpenCode vai descobrir automaticamente as skills ao subir.
 
-### Uso no OpenCode
+---
 
-O agente carrega skills sob demanda. Você pode solicitar explicitamente:
+## Onde buscar mais skills
 
-> "Use a skill systematic-debugging para investigar esse erro"
+### [skills.sh](https://skills.sh) — Diretório central de skills para agentes AI
 
-Ou deixar o agente escolher com base na descrição das skills disponíveis.
+O **skills.sh** é o diretório oficial de skills compatíveis com OpenCode e 20+ outros agentes (Claude Code, Cursor, Cline, Copilot, etc).
+
+**Instalação rápida:**
+```bash
+npx skills add <owner/repo>
+```
+
+**Características:**
+- Leaderboard de skills mais populares
+- Busca por categoria (frontend, backend, cloud, etc)
+- Compatível com múltiplos agentes
+- Skills verificadas pela comunidade
+
+**Exemplos de skills populares:**
+- `vercel-labs/agent-skills` — melhores práticas Vercel/React
+- `anthropics/skills` — skills oficiais da Anthropic
+- `obra/superpowers` — debugging, TDD, brainstorm
+- `microsoft/azure-skills` — Azure
+- `expo/skills` — React Native/Expo
+- `supabase/agent-skills` — PostgreSQL/Supabase
+
+**Quando usar:**
+- Ao iniciar um novo projeto, busque skills relevantes
+- Ao enfrentar problemas específicos, procure skills especializadas
+- Explore o leaderboard para descobrir novas ferramentas
 
 ---
 
