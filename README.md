@@ -322,9 +322,33 @@ Encontrou uma skill útil? Abra um PR com:
 
 ## Referências
 
+## Referências
+
 - [OpenCode Skills Docs](https://opencode.ai/docs/skills/)
 - [obra/superpowers](https://github.com/obra/superpowers)
 - [blader/napkin](https://github.com/blader/napkin)
 - [Dammyjay93/interface-design](https://github.com/Dammyjay93/interface-design)
 - [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp)
 - [Firecrawl CLI Docs](https://docs.firecrawl.dev/sdks/cli)
+
+---
+
+## Projetos Originais das Skills
+
+As skills deste repositório foram adaptadas a partir dos seguintes projetos:
+
+### awesome-opencode (coleção principal)
+- [tickernelz/opencode-mem](https://github.com/tickernelz/opencode-mem)
+- [IgorWarzocha/Opencode-Context-Analysis-Plugin](https://github.com/IgorWarzocha/Opencode-Context-Analysis-Plugin)
+- [IgorWarzocha/Opencode-Roadmap](https://github.com/IgorWarzocha/Opencode-Roadmap)
+- [Tarquinen/opencode-dynamic-context-pruning](https://github.com/Tarquinen/opencode-dynamic-context-pruning)
+- [spoons-and-mirrors/pocket-universe](https://github.com/spoons-and-mirrors/pocket-universe)
+- [spoons-and-mirrors/subtask2](https://github.com/spoons-and-mirrors/subtask2)
+- [ramtinJ95/opencode-tokenscope](https://github.com/ramtinJ95/opencode-tokenscope)
+- [joshuadavidthomas/opencode-agent-memory](https://github.com/joshuadavidthomas/opencode-agent-memory)
+
+### Outros projetos
+- [obra/superpowers](https://github.com/obra/superpowers) — systematic-debugging, test-driven-development, finishing-a-branch
+- [blader/napkin](https://github.com/blader/napkin) — napkin
+- [Dammyjay93/interface-design](https://github.com/Dammyjay93/interface-design) — interface-design
+- [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp) — playwright MCP
