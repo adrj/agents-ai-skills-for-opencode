@@ -144,6 +144,7 @@ Referência completa de CLIs organizadas por contexto: universais, por stack (No
 - Busca e navegação (`ripgrep`, `fd`, `fzf`, `bat`, `eza`, `zoxide`)
 - Node.js (`fnm`, `pnpm`, `tsx`, `ncu`)
 - Python (`uv`, `ruff`, `pyenv`)
+- Java/Spring Boot (`sdkman`, JDK Temurin, `mvnd`, `spring` CLI, `quarkus`, `jbang`, `flyway`)
 - Docker/K8s (`lazydocker`, `k9s`, `ctop`, `dive`)
 - APIs (`httpie`, `xh`, `hurl`, `websocat`)
 - Bancos de dados (`pgcli`, `mycli`, `usql`)
