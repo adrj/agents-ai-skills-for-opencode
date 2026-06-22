@@ -3,6 +3,9 @@ name: systematic-debugging
 description: Use when encountering any bug, test failure, or unexpected behavior. Always find root cause before proposing fixes. Random fixes waste time and create new bugs.
 license: MIT
 compatibility: opencode
+min_version: 1.0.0
+scope: [global]
+tags: [debugging, troubleshooting, workflow, quality]
 metadata:
   source: https://github.com/obra/superpowers/tree/main/skills/systematic-debugging
   adapted-for: opencode

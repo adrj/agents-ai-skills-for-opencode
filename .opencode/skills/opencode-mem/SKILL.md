@@ -3,6 +3,9 @@ name: opencode-mem
 description: Persistent memory system with vector database for long-term context retention across sessions. Features dual memory scopes, web interface, auto-capture system, and multi-provider AI support.
 license: MIT
 compatibility: opencode
+min_version: 1.0.0
+scope: [project, global]
+tags: [memory, vector, persistence, search, knowledge]
 metadata:
   source: https://github.com/tickernelz/opencode-mem
   adapted-for: opencode

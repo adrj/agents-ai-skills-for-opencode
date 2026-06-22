@@ -3,8 +3,11 @@ name: dev-cli-tools
 description: Reference guide for essential CLI tools in dev projects. Use when setting up a new project environment, onboarding a dev machine, or when the user asks what CLI tools to install. Covers git, node, python, java/spring, docker, API testing, data, and shell productivity.
 license: MIT
 compatibility: opencode
+min_version: 1.0.0
+scope: [global]
+tags: [cli, devtools, reference, onboarding]
 metadata:
-  curated-from: dev.to/lissy93, agarrharr/awesome-cli-apps, sdkman.io, spring.io, jbang.dev, quarkus.io
+  source: curated (dev.to, awesome-cli-apps)
   adapted-for: opencode
 ---
 
@@ -15,20 +18,20 @@ Use this to recommend installs based on the project type.
 
 ---
 
-## Essenciais Universais (qualquer projeto)
+## Universal Essentials (any project)
 
-Ferramentas que todo dev deveria ter independente da stack.
+Tools every developer should have regardless of stack.
 
-### Git & Controle de Versão
+### Git & Version Control
 
-| Ferramenta | Instala | Para quê |
+| Tool | Install | Why |
 |-----------|---------|----------|
-| **gh** | `brew install gh` / `winget install GitHub.cli` | GitHub CLI — PRs, issues, releases direto do terminal |
-| **lazygit** | `brew install lazygit` | TUI completa para git. Visualiza branches, diffs, stash |
-| **git-delta** | `brew install git-delta` | Diff muito mais legível (substitui diff-so-fancy) |
-| **gitui** | `brew install gitui` | Alternativa ao lazygit, mais leve |
+| **gh** | `brew install gh` / `winget install GitHub.cli` | GitHub CLI — PRs, issues, releases from terminal |
+| **lazygit** | `brew install lazygit` | Full TUI for git — branches, diffs, stash |
+| **git-delta** | `brew install git-delta` | Much more readable diff output |
+| **gitui** | `brew install gitui` | Lighter alternative to lazygit |
 
-**Setup recomendado para git-delta** (adicione ao `~/.gitconfig`):
+**Recommended git-delta setup** (add to `~/.gitconfig`):
 ```ini
 [core]
     pager = delta
@@ -39,18 +42,18 @@ Ferramentas que todo dev deveria ter independente da stack.
 
 ---
 
-### Busca e Navegação
+### Search & Navigation
 
-| Ferramenta | Instala | Para quê |
+| Tool | Install | Why |
 |-----------|---------|----------|
-| **ripgrep** (`rg`) | `brew install ripgrep` / `winget install BurntSushi.ripgrep.MSVC` | Busca em arquivos — muito mais rápido que grep. Respeita .gitignore |
-| **fd** | `brew install fd` | Busca de arquivos — substitui `find`, mais intuitivo |
-| **fzf** | `brew install fzf` | Fuzzy finder interativo. Integra com shell para busca de histórico e arquivos |
-| **zoxide** (`z`) | `brew install zoxide` | Navega para diretórios sem precisar do path completo (`z meu-projeto`) |
-| **bat** | `brew install bat` | Substitui `cat` com syntax highlighting e line numbers |
-| **eza** | `brew install eza` | Substitui `ls` com ícones, cores e git status |
+| **ripgrep** (`rg`) | `brew install ripgrep` / `winget install BurntSushi.ripgrep.MSVC` | Fast file search — much faster than grep, respects .gitignore |
+| **fd** | `brew install fd` | File discovery — replaces `find`, more intuitive |
+| **fzf** | `brew install fzf` | Interactive fuzzy finder — integrates with shell |
+| **zoxide** (`z`) | `brew install zoxide` | Jump to directories without full path (`z my-project`) |
+| **bat** | `brew install bat` | Replaces `cat` with syntax highlighting and line numbers |
+| **eza** | `brew install eza` | Replaces `ls` with icons, colors, git status |
 
-**Aliases úteis** (adicione ao `.bashrc` / `.zshrc`):
+**Useful aliases** (add to `.bashrc` / `.zshrc`):
 ```bash
 alias ls='eza --icons --git'
 alias ll='eza -la --icons --git'
@@ -60,40 +63,39 @@ alias find='fd'
 
 ---
 
-### Shell e Terminal
+### Shell & Terminal
 
-| Ferramenta | Instala | Para quê |
+| Tool | Install | Why |
 |-----------|---------|----------|
-| **starship** | `brew install starship` | Prompt bonito e informativo em qualquer shell |
-| **tldr** | `brew install tldr` / `npm i -g tldr` | Docs resumidas com exemplos (substitui `man`) |
-| **just** | `brew install just` | Task runner — substitui `make` com sintaxe mais clara |
-| **direnv** | `brew install direnv` | Carrega variáveis de ambiente por diretório (`.envrc`) |
-| **jq** | `brew install jq` / `winget install jqlang.jq` | Processa JSON na linha de comando |
-| **yq** | `brew install yq` | Processa YAML (mesma API do jq) |
+| **starship** | `brew install starship` | Beautiful, informative prompt for any shell |
+| **tldr** | `brew install tldr` / `npm i -g tldr` | Simplified man pages with examples |
+| **just** | `brew install just` | Task runner — replaces `make` with cleaner syntax |
+| **direnv** | `brew install direnv` | Loads env variables per directory (`.envrc`) |
+| **jq** | `brew install jq` / `winget install jqlang.jq` | Command-line JSON processor |
+| **yq** | `brew install yq` | YAML processor (same API as jq) |
 
 ---
 
-## Por Stack
+## Per Stack
 
 ### Node.js / JavaScript / TypeScript
 
-| Ferramenta | Instala | Para quê |
+| Tool | Install | Why |
 |-----------|---------|----------|
-| **fnm** | `brew install fnm` | Gerencia versões do Node — mais rápido que nvm |
-| **pnpm** | `npm i -g pnpm` | Package manager mais eficiente (disco e velocidade) |
-| **tsx** | `npm i -g tsx` | Executa TypeScript direto sem build (`tsx arquivo.ts`) |
-| **npm-check-updates** (`ncu`) | `npm i -g npm-check-updates` | Verifica e atualiza versões de dependências |
-| **serve** | `npm i -g serve` | Serve arquivos estáticos localmente (`serve ./dist`) |
-| **np** | `npm i -g np` | Publica packages npm com segurança (checklist automático) |
-| **release-it** | `npm i -g release-it` | Automatiza releases: changelog, git tag, npm publish |
-| **depcheck** | `npm i -g depcheck` | Detecta dependências não usadas no projeto |
-| **bundlewatch** | `npm i -g bundlewatch` | Monitora tamanho do bundle ao longo do tempo |
+| **fnm** | `brew install fnm` | Node version manager — faster than nvm |
+| **pnpm** | `npm i -g pnpm` | More efficient package manager (disk and speed) |
+| **tsx** | `npm i -g tsx` | Run TypeScript directly without build |
+| **npm-check-updates** (`ncu`) | `npm i -g npm-check-updates` | Check and update dependency versions |
+| **serve** | `npm i -g serve` | Serve static files locally |
+| **np** | `npm i -g np` | Safe npm package publishing (auto-checklist) |
+| **release-it** | `npm i -g release-it` | Automate releases: changelog, git tag, npm publish |
+| **depcheck** | `npm i -g depcheck` | Detect unused dependencies |
+| **bundlewatch** | `npm i -g bundlewatch` | Track bundle size over time |
 
-**Para projetos Next.js / React:**
+**For Next.js / React projects:**
 ```bash
-# Analisa tamanho do bundle
+# Analyze bundle size
 npm i -g @next/bundle-analyzer
-# ou
 npx source-map-explorer 'build/static/js/*.js'
 ```
 
@@ -101,147 +103,144 @@ npx source-map-explorer 'build/static/js/*.js'
 
 ### Python
 
-| Ferramenta | Instala | Para quê |
+| Tool | Install | Why |
 |-----------|---------|----------|
-| **uv** | `brew install uv` / `pip install uv` | Package manager ultra-rápido (substitui pip + venv) |
-| **ruff** | `brew install ruff` / `pip install ruff` | Linter e formatter Python muito rápido (substitui flake8 + black) |
-| **pyenv** | `brew install pyenv` | Gerencia versões do Python |
-| **httpx** | `pip install httpx[cli]` | Cliente HTTP moderno com CLI (`httpx https://api.example.com`) |
-| **rich** | `pip install rich` | Output bonito no terminal para scripts Python |
+| **uv** | `brew install uv` / `pip install uv` | Ultra-fast package manager (replaces pip + venv) |
+| **ruff** | `brew install ruff` / `pip install ruff` | Very fast linter and formatter (replaces flake8 + black) |
+| **pyenv** | `brew install pyenv` | Python version manager |
+| **httpx** | `pip install httpx[cli]` | Modern HTTP client with CLI |
+| **rich** | `pip install rich` | Beautiful terminal output for Python scripts |
 
 ---
 
-### Docker e Containers
+### Docker & Containers
 
-| Ferramenta | Instala | Para quê |
+| Tool | Install | Why |
 |-----------|---------|----------|
-| **lazydocker** | `brew install lazydocker` | TUI completa para Docker (containers, imagens, volumes, logs) |
-| **ctop** | `brew install ctop` | Monitora métricas de containers em tempo real |
-| **dive** | `brew install dive` | Inspeciona layers de imagens Docker |
-| **k9s** | `brew install k9s` | TUI para Kubernetes — navega pods, logs, exec |
-| **stern** | `brew install stern` | Tail de logs de múltiplos pods Kubernetes simultaneamente |
+| **lazydocker** | `brew install lazydocker` | Full TUI for Docker (containers, images, volumes, logs) |
+| **ctop** | `brew install ctop` | Real-time container metrics monitoring |
+| **dive** | `brew install dive` | Inspect Docker image layers |
+| **k9s** | `brew install k9s` | TUI for Kubernetes — browse pods, logs, exec |
+| **stern** | `brew install stern` | Tail logs from multiple Kubernetes pods simultaneously |
 
 ---
 
-### APIs e HTTP
+### APIs & HTTP
 
-| Ferramenta | Instala | Para quê |
+| Tool | Install | Why |
 |-----------|---------|----------|
-| **httpie** (`http`) | `brew install httpie` / `pip install httpie` | Cliente HTTP humano — mais legível que curl |
-| **curlie** | `brew install curlie` | curl com saída do httpie — compatível com scripts existentes |
-| **xh** | `brew install xh` | Alternativa ao httpie, mais rápida (Rust) |
-| **hurl** | `brew install hurl` | Testa APIs com arquivos `.hurl` declarativos |
-| **websocat** | `brew install websocat` | Cliente WebSocket para terminal (`websocat ws://...`) |
+| **httpie** (`http`) | `brew install httpie` / `pip install httpie` | Human-friendly HTTP client |
+| **curlie** | `brew install curlie` | curl with httpie output — script-compatible |
+| **xh** | `brew install xh` | Faster httpie alternative (Rust) |
+| **hurl** | `brew install hurl` | Test APIs with declarative `.hurl` files |
+| **websocat** | `brew install websocat` | WebSocket CLI client |
 
-**Exemplo httpie:**
+**httpie examples:**
 ```bash
-# GET com headers
-http GET api.exemplo.com/users Authorization:"Bearer token123"
+# GET with headers
+http GET api.example.com/users Authorization:"Bearer token123"
 
 # POST JSON
-http POST api.exemplo.com/users name="João" email="joao@ex.com"
+http POST api.example.com/users name="John" email="john@example.com"
 ```
 
 ---
 
-### Banco de Dados
+### Databases
 
-| Ferramenta | Instala | Para quê |
+| Tool | Install | Why |
 |-----------|---------|----------|
-| **pgcli** | `brew install pgcli` / `pip install pgcli` | Cliente PostgreSQL com autocompletion inteligente |
-| **mycli** | `brew install mycli` / `pip install mycli` | Cliente MySQL com autocompletion |
-| **usql** | `brew install usql` | Cliente SQL universal (PG, MySQL, SQLite, etc.) |
-| **redis-cli** | vem com Redis | Cliente Redis (já incluído na instalação do Redis) |
+| **pgcli** | `brew install pgcli` / `pip install pgcli` | PostgreSQL client with smart autocompletion |
+| **mycli** | `brew install mycli` / `pip install mycli` | MySQL client with autocompletion |
+| **usql** | `brew install usql` | Universal SQL client (PG, MySQL, SQLite, etc.) |
+| **redis-cli** | ships with Redis | Redis CLI (included with Redis installation) |
 
 ---
 
-### Cloud e DevOps
+### Cloud & DevOps
 
-| Ferramenta | Instala | Para quê |
+| Tool | Install | Why |
 |-----------|---------|----------|
-| **awscli** | `brew install awscli` / `pip install awscli` | CLI oficial da AWS |
+| **awscli** | `brew install awscli` / `pip install awscli` | Official AWS CLI |
 | **terraform** | `brew install terraform` | Infrastructure as Code |
-| **pulumi** | `brew install pulumi` | IaC com linguagens reais (TS, Python, Go) |
-| **caddy** | `brew install caddy` | Servidor HTTP com HTTPS automático |
-| **ngrok** | `brew install ngrok` | Expõe localhost para a internet (webhooks, demos) |
-| **cloudflared** | `brew install cloudflared` | Tunnel Cloudflare — alternativa ao ngrok |
-| **mkcert** | `brew install mkcert` | Cria certificados HTTPS locais confiáveis |
+| **pulumi** | `brew install pulumi` | IaC with real languages (TS, Python, Go) |
+| **caddy** | `brew install caddy` | HTTP server with auto HTTPS |
+| **ngrok** | `brew install ngrok` | Expose localhost to internet (webhooks, demos) |
+| **cloudflared** | `brew install cloudflared` | Cloudflare tunnel — ngrok alternative |
+| **mkcert** | `brew install mkcert` | Create trusted local HTTPS certificates |
 
 ---
 
-### Segurança e Secrets
+### Security & Secrets
 
-| Ferramenta | Instala | Para quê |
+| Tool | Install | Why |
 |-----------|---------|----------|
-| **gitleaks** | `brew install gitleaks` | Detecta secrets vazados no git history |
-| **trufflehog** | `brew install trufflesecurity/trufflehog/trufflehog` | Varre repos procurando secrets |
-| **age** | `brew install age` | Criptografia de arquivos simples e moderna |
-| **op** (1Password) | site oficial | CLI do 1Password para usar secrets em scripts |
+| **gitleaks** | `brew install gitleaks` | Detect leaked secrets in git history |
+| **trufflehog** | `brew install trufflesecurity/trufflehog/trufflehog` | Scan repos for secrets |
+| **age** | `brew install age` | Simple, modern file encryption |
+| **op** (1Password) | official site | 1Password CLI for secrets in scripts |
 
-**Use em CI:**
+**Use in CI:**
 ```bash
-# Antes de cada push/commit
 gitleaks detect --source . --verbose
 ```
 
 ---
 
-### Dados e JSON
+### Data & JSON
 
-| Ferramenta | Instala | Para quê |
+| Tool | Install | Why |
 |-----------|---------|----------|
-| **jq** | `brew install jq` | Query e transformação de JSON |
-| **fx** | `npm i -g fx` | JSON viewer interativo no terminal |
-| **gron** | `brew install gron` | Torna JSON greppável (`gron data.json \| grep name`) |
-| **dasel** | `brew install dasel` | Seleciona/modifica JSON, YAML, TOML, XML com mesma API |
-| **visidata** | `pip install visidata` | Spreadsheet para CSV/JSON/logs no terminal |
-| **miller** (`mlr`) | `brew install miller` | Processa CSV/TSV/JSON como sed/awk |
+| **jq** | `brew install jq` | JSON query and transformation |
+| **fx** | `npm i -g fx` | Interactive JSON viewer for terminal |
+| **gron** | `brew install gron` | Make JSON greppable (`gron data.json \| grep name`) |
+| **dasel** | `brew install dasel` | Select/modify JSON, YAML, TOML, XML with same API |
+| **visidata** | `pip install visidata` | Terminal spreadsheet for CSV/JSON/logs |
+| **miller** (`mlr`) | `brew install miller` | Process CSV/TSV/JSON like sed/awk |
 
 ---
 
-### Java e Spring Boot
+### Java & Spring Boot
 
----
+**First step: install SDKMAN!**
 
-**Primeiro passo: instale o SDKMAN!**
-
-SDKMAN é o gerenciador de versões padrão do ecossistema Java — gerencia JDK, Maven, Gradle, Spring Boot CLI, Quarkus CLI e muito mais em paralelo.
+SDKMAN is the standard version manager for the Java ecosystem — manages JDK, Maven, Gradle, Spring Boot CLI, Quarkus CLI, and more in parallel.
 
 ```bash
 # macOS / Linux
 curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-# Verificar
+# Verify
 sdk version
 ```
 
 ---
 
-#### Gerenciamento de JDK
+#### JDK Management
 
-| Ferramenta | Instala | Para quê |
+| Tool | Install | Why |
 |-----------|---------|----------|
-| **SDKMAN!** | `curl -s "https://get.sdkman.io" \| bash` | Gerencia JDK, Maven, Gradle, Spring CLI, Quarkus CLI — o `fnm` do ecossistema Java |
-| **Eclipse Temurin** | `sdk install java 21.0.5-tem` | JDK OpenJDK mais popular para produção (LTS recomendado: 21) |
-| **GraalVM** | `sdk install java 21.0.3-graal` | JDK com compilação nativa (`native-image`) — essencial para Spring Native e Quarkus |
+| **SDKMAN!** | `curl -s "https://get.sdkman.io" \| bash` | Manages JDK, Maven, Gradle, Spring CLI, Quarkus CLI |
+| **Eclipse Temurin** | `sdk install java 21.0.5-tem` | Most popular OpenJDK for production (LTS: 21) |
+| **GraalVM** | `sdk install java 21.0.3-graal` | JDK with native compilation (`native-image`) |
 
 ```bash
-# Ver JDKs disponíveis
+# List available JDKs
 sdk list java
 
-# Instalar LTS atual (Java 21)
+# Install current LTS (Java 21)
 sdk install java 21.0.5-tem
 
-# Instalar GraalVM para native image
+# Install GraalVM for native image
 sdk install java 21.0.3-graal
 
-# Trocar versão no projeto (cria .sdkmanrc)
+# Switch version per project (creates .sdkmanrc)
 sdk env init
 sdk env
 ```
 
-**Arquivo `.sdkmanrc`** — versiona o JDK por projeto (equivalente ao `.nvmrc`):
+**.sdkmanrc file** — version JDK per project (equivalent to `.nvmrc`):
 ```
 java=21.0.5-tem
 ```
@@ -250,26 +249,26 @@ java=21.0.5-tem
 
 #### Build Tools
 
-| Ferramenta | Instala | Para quê |
+| Tool | Install | Why |
 |-----------|---------|----------|
-| **Maven** | `sdk install maven` / `brew install maven` | Build tool padrão do ecossistema Spring |
-| **Maven Daemon** (`mvnd`) | `sdk install mvnd` | Maven paralelo e persistente — até 10x mais rápido |
-| **Gradle** | `sdk install gradle` / `brew install gradle` | Build tool alternativo, mais usado em Android e Kotlin |
-| **Gradle profiler** | `sdk install gradleprofiler` | Perfila builds Gradle para otimizar tempo de compilação |
+| **Maven** | `sdk install maven` / `brew install maven` | Standard Spring build tool |
+| **Maven Daemon** (`mvnd`) | `sdk install mvnd` | Parallel, persistent Maven — up to 10x faster |
+| **Gradle** | `sdk install gradle` / `brew install gradle` | Alternative build tool (Android, Kotlin) |
+| **Gradle profiler** | `sdk install gradleprofiler` | Profile Gradle builds to optimize compilation time |
 
 ```bash
-# Maven — comandos essenciais
-mvn spring-boot:run          # Roda a aplicação
-mvn test                     # Executa testes
-mvn clean package -DskipTests # Gera JAR sem rodar testes
-mvn dependency:tree          # Mostra árvore de dependências
-mvn dependency:analyze       # Detecta dependências não usadas
+# Maven essentials
+mvn spring-boot:run          # Run application
+mvn test                     # Run tests
+mvn clean package -DskipTests # Build JAR
+mvn dependency:tree          # Show dependency tree
+mvn dependency:analyze       # Detect unused dependencies
 
-# Maven Daemon (substituto direto, mesma sintaxe)
+# Maven Daemon (drop-in replacement)
 mvnd spring-boot:run
 mvnd clean package
 
-# Wrapper (sem instalar Maven/Gradle globalmente)
+# Wrapper (no global Maven/Gradle needed)
 ./mvnw spring-boot:run
 ./gradlew bootRun
 ```
@@ -279,50 +278,50 @@ mvnd clean package
 #### Spring Boot CLI
 
 ```bash
-# Instalar via SDKMAN
+# Install via SDKMAN
 sdk install springboot
 
-# Ou via Homebrew
+# Or via Homebrew
 brew tap spring-io/tap
 brew install spring-boot
 ```
 
 ```bash
-# Criar novo projeto (integra com start.spring.io)
-spring init --dependencies=web,data-jpa,postgresql --build=maven meu-projeto
+# Create new project (integrates with start.spring.io)
+spring init --dependencies=web,data-jpa,postgresql --build=maven my-project
 
-# Criar com mais opções
+# Create with more options
 spring init \
-  --group-id=com.empresa \
-  --artifact-id=meu-servico \
+  --group-id=com.company \
+  --artifact-id=my-service \
   --dependencies=web,security,data-jpa,actuator,lombok \
   --java-version=21 \
   --build=maven \
-  meu-servico
+  my-service
 
-# Listar dependências disponíveis
+# List available dependencies
 spring init --list
 
-# Subir script Groovy sem projeto (prototipagem rápida)
+# Run Groovy script without project (quick prototyping)
 spring run hello.groovy
 ```
 
 ---
 
-#### Spring CLI (nova — project templating)
+#### Spring CLI (new — project templating)
 
 ```bash
-# Instalar via SDKMAN
+# Install via SDKMAN
 sdk install springcli
 
-# Criar projeto a partir de template de repositório
-spring boot new meu-projeto
+# Create project from repository template
+spring boot new my-project
 
-# Adicionar feature a projeto existente (merge inteligente)
+# Add feature to existing project (intelligent merge)
 spring boot add jpa
 spring boot add security
 
-# Listar projetos/templates disponíveis
+# List available projects/templates
 spring project list
 ```
 
@@ -330,26 +329,26 @@ spring project list
 
 #### Quarkus CLI
 
-Quarkus é alternativa ao Spring Boot com foco em GraalVM native e startup rápido. A CLI é excelente mesmo se você estiver comparando opções.
+Quarkus is a Spring Boot alternative focused on GraalVM native and fast startup. The CLI is excellent even for comparison.
 
 ```bash
-# Instalar via SDKMAN
+# Install via SDKMAN
 sdk install quarkus
 
-# Ou via Homebrew
+# Or via Homebrew
 brew install quarkusio/tap/quarkus
 
-# Criar projeto
-quarkus create app com.empresa:meu-servico \
+# Create project
+quarkus create app com.company:my-service \
   --extension=quarkus-rest,quarkus-hibernate-orm-panache,quarkus-jdbc-postgresql
 
 # Dev mode (live reload)
 quarkus dev
 
-# Listar extensões
+# List extensions
 quarkus ext list --concise -i -s jdbc
 
-# Adicionar extensão
+# Add extension
 quarkus ext add smallrye-openapi
 
 # Build native image
@@ -358,21 +357,21 @@ quarkus build --native
 
 ---
 
-#### JBang — Java sem projeto
+#### JBang — Java without Project
 
-JBang permite executar Java como script, sem `pom.xml` ou estrutura de projeto. Ideal para automações, CLIs rápidas e exploração.
+JBang lets you run Java as a script, without `pom.xml` or project structure. Ideal for automation, quick CLIs, and exploration.
 
 ```bash
-# Instalar
+# Install
 sdk install jbang
-# ou
+# or
 brew install jbangdev/tap/jbang
 
-# Rodar arquivo Java diretamente
+# Run Java file directly
 jbang hello.java
 
-# Criar script com dependências
-jbang init --template=cli minha-ferramenta.java
+# Create script with dependencies
+jbang init --template=cli my-tool.java
 ```
 
 ```java
@@ -380,8 +379,8 @@ jbang init --template=cli minha-ferramenta.java
 //DEPS org.springframework.boot:spring-boot-starter-web:3.2.0
 //JAVA 21+
 
-// Arquivo standalone — sem pom.xml, sem estrutura de projeto
-public class MinhaFerramenta {
+// Standalone file — no pom.xml, no project structure
+public class MyTool {
     public static void main(String[] args) {
         System.out.println("Hello from JBang!");
     }
@@ -389,151 +388,146 @@ public class MinhaFerramenta {
 ```
 
 ```bash
-# Instalar como comando do sistema
-jbang app install minha-ferramenta.java
+# Install as system command
+jbang app install my-tool.java
 
-# Executar script de URL (ex: GitHub)
+# Run script from URL (e.g., GitHub)
 jbang https://github.com/user/repo/blob/main/script.java
 
-# IDE support (abre com IntelliJ/VSCode)
-jbang edit minha-ferramenta.java
+# IDE support (opens with IntelliJ/VSCode)
+jbang edit my-tool.java
 ```
 
 ---
 
-#### Ferramentas de Diagnóstico JVM
+#### JVM Diagnostic Tools
 
-| Ferramenta | Instala | Para quê |
+| Tool | Install | Why |
 |-----------|---------|----------|
-| **VisualVM** | `sdk install visualvm` | Profiler e monitor de JVM — heap, threads, CPU |
-| **JDK Mission Control** | `sdk install jmc` | Profiler avançado da Oracle (Flight Recorder) |
-| **jvmtop** | `brew install jvmtop` | `htop` para JVMs — mostra threads, heap, GC em tempo real |
-| **async-profiler** | download direto | Profiler de CPU/heap de baixo overhead — sem safepoint bias |
-| **Eclipse MAT** | download direto | Analisador de heap dump (`.hprof`) — detecta memory leaks |
+| **VisualVM** | `sdk install visualvm` | JVM profiler and monitor — heap, threads, CPU |
+| **JDK Mission Control** | `sdk install jmc` | Advanced Oracle profiler (Flight Recorder) |
+| **jvmtop** | `brew install jvmtop` | `htop` for JVMs — threads, heap, GC in real-time |
+| **async-profiler** | direct download | Low-overhead CPU/heap profiler — no safepoint bias |
+| **Eclipse MAT** | direct download | Heap dump analyzer (`.hprof`) — detects memory leaks |
 
 ```bash
-# Diagnóstico via JDK built-in tools
-jps -l                         # Lista processos Java rodando
+# JDK built-in diagnostic tools
+jps -l                         # List running Java processes
 jstack <pid>                   # Thread dump
-jmap -heap <pid>               # Info do heap
-jstat -gc <pid> 1000           # Estatísticas de GC a cada 1 segundo
-jcmd <pid> VM.native_memory    # Uso de memória nativa
-jcmd <pid> Thread.print        # Thread dump alternativo
+jmap -heap <pid>               # Heap info
+jstat -gc <pid> 1000           # GC statistics every 1 second
+jcmd <pid> VM.native_memory    # Native memory usage
 
-# Heap dump para análise
+# Heap dump for analysis
 jmap -dump:live,format=b,file=heap.hprof <pid>
 ```
 
 ---
 
-#### Banco de Dados com Spring
+#### Database with Spring
 
-| Ferramenta | Instala | Para quê |
+| Tool | Install | Why |
 |-----------|---------|----------|
-| **Flyway CLI** | `brew install flyway` | Gerencia migrations SQL — `flyway migrate`, `flyway info` |
-| **Liquibase CLI** | `sdk install liquibase` | Alternativa ao Flyway, com suporte a XML/YAML/JSON além de SQL |
-| **pgcli** | `brew install pgcli` | Cliente PostgreSQL com autocompletion (essencial com Spring Data JPA) |
-| **mycli** | `brew install mycli` | Cliente MySQL/MariaDB com autocompletion |
+| **Flyway CLI** | `brew install flyway` | SQL migration management |
+| **Liquibase CLI** | `sdk install liquibase` | Flyway alternative with XML/YAML/JSON support |
+| **pgcli** | `brew install pgcli` | PostgreSQL client with autocompletion |
+| **mycli** | `brew install mycli` | MySQL/MariaDB client with autocompletion |
 
 ```bash
-# Flyway — checar estado das migrations
+# Flyway — check migration status
 flyway -url=jdbc:postgresql://localhost:5432/mydb \
        -user=postgres -password=postgres info
 
-# Liquibase — validar changelog
+# Liquibase — validate changelog
 liquibase --changelog-file=db/changelog/db.changelog-master.yaml validate
 ```
 
 ---
 
-#### Observabilidade e Actuator
+#### Observability & Actuator
 
-| Ferramenta | Instala | Para quê |
+| Tool | Install | Why |
 |-----------|---------|----------|
-| **HTTPie** | `brew install httpie` | Testar endpoints do Actuator facilmente |
-| **jq** | `brew install jq` | Processar JSON do Actuator (`/actuator/health`, `/actuator/metrics`) |
+| **HTTPie** | `brew install httpie` | Easily test Actuator endpoints |
+| **jq** | `brew install jq` | Process Actuator JSON output |
 
 ```bash
-# Testar endpoints do Spring Boot Actuator
+# Test Spring Boot Actuator endpoints
 http :8080/actuator/health
 http :8080/actuator/info
 http :8080/actuator/metrics
-http :8080/actuator/metrics/jvm.memory.used
 
-# Filtrar com jq
+# Filter with jq
 curl -s http://localhost:8080/actuator/health | jq '.components'
 curl -s http://localhost:8080/actuator/metrics | jq '.names[]' | grep jvm
 
-# Ver todos os beans registrados
+# View all registered beans
 http :8080/actuator/beans | jq '.contexts.application.beans | keys'
 
-# Ver mapeamentos de rotas
+# View route mappings
 http :8080/actuator/mappings | jq '..'
 ```
 
 ---
 
-#### Containers e Deploy de Apps Spring
+#### Containers & Deploy for Spring Apps
 
 ```bash
-# Build da imagem com Buildpacks (sem Dockerfile)
-./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=meu-app:latest
+# Build image with Buildpacks (no Dockerfile)
+./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=my-app:latest
 
-# Build com Jib (mais rápido, sem Docker daemon)
+# Build with Jib (faster, no Docker daemon)
 ./mvnw compile com.google.cloud.tools:jib-maven-plugin:3.4.0:dockerBuild
 
-# Quarkus — build native image Docker
+# Quarkus — native Docker build
 quarkus build --native -Dquarkus.native.container-build=true
 
-# Inspecionar layers da imagem
+# Inspect image layers
 brew install dive
-dive meu-app:latest
+dive my-app:latest
 ```
 
 ---
 
-#### Setup Completo — Projeto Java/Spring Boot
+#### Complete Java/Spring Boot Setup
 
 ```bash
 # 1. SDKMAN
 curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-# 2. JDK + ferramentas de build
+# 2. JDK + build tools
 sdk install java 21.0.5-tem
 sdk install maven
-sdk install mvnd        # Maven paralelo
+sdk install mvnd        # Parallel Maven
 sdk install springboot  # Spring Boot CLI
 
-# 3. Criar projeto
+# 3. Create project
 spring init \
   --dependencies=web,data-jpa,actuator,security,lombok,validation \
   --build=maven \
   --java-version=21 \
-  meu-projeto
-cd meu-projeto
+  my-project
+cd my-project
 
-# 4. Versionamento de JDK no projeto
+# 4. Pin JDK version per project
 sdk env init
-# Edite .sdkmanrc para fixar versão: java=21.0.5-tem
+# Edit .sdkmanrc to pin: java=21.0.5-tem
 
 # 5. Git essentials
 brew install gh lazygit git-delta ripgrep fd bat jq httpie gitleaks
 
-# 6. Banco de dados
+# 6. Database
 brew install pgcli flyway
 
-# 7. Docker para dependências locais
+# 7. Docker for local dependencies
 brew install lazydocker
-# docker-compose up -d (postgres, redis, kafka...)
 
-# 8. Rodar o projeto
+# 8. Run the project
 ./mvnw spring-boot:run
-# ou com live reload (DevTools no classpath)
-./mvnw spring-boot:run -Dspring-boot.run.fork=false
 ```
 
-**Dica:** Com `spring-boot-devtools` no `pom.xml`, mudanças no código reiniciam automaticamente sem precisar do Maven. Adicione ao `pom.xml`:
+**Tip:** With `spring-boot-devtools` in `pom.xml`, code changes auto-restart without Maven:
 ```xml
 <dependency>
   <groupId>org.springframework.boot</groupId>
@@ -545,52 +539,52 @@ brew install lazydocker
 
 ---
 
-### Monitoramento e Performance
+### Monitoring & Performance
 
-| Ferramenta | Instala | Para quê |
+| Tool | Install | Why |
 |-----------|---------|----------|
-| **htop** | `brew install htop` | Monitor de processos interativo |
-| **btop** | `brew install btop` | Monitor completo (CPU, mem, disco, rede) — visual rico |
-| **bandwhich** | `brew install bandwhich` | Monitora uso de banda por processo em tempo real |
-| **hyperfine** | `brew install hyperfine` | Benchmarking de comandos com estatísticas |
-| **vegeta** | `brew install vegeta` | Load testing de APIs HTTP |
+| **htop** | `brew install htop` | Interactive process monitor |
+| **btop** | `brew install btop` | Full system monitor (CPU, mem, disk, net) |
+| **bandwhich** | `brew install bandwhich` | Real-time bandwidth usage per process |
+| **hyperfine** | `brew install hyperfine` | Command benchmarking with statistics |
+| **vegeta** | `brew install vegeta` | HTTP API load testing |
 
 ---
 
-## Setup por Tipo de Projeto
+## Setup by Project Type
 
-### Projeto Web (Node/React/Next)
+### Web Project (Node/React/Next)
 
 ```bash
-# Essenciais
+# Essentials
 brew install gh lazygit git-delta ripgrep fd fzf bat eza zoxide jq just
 
 # Node
 brew install fnm
 npm i -g pnpm tsx npm-check-updates serve
 
-# Desenvolvimento
+# Development
 npm i -g release-it depcheck
 ```
 
-### Projeto Python/Backend
+### Python/Backend Project
 
 ```bash
-# Essenciais
+# Essentials
 brew install gh lazygit git-delta ripgrep fd fzf bat eza zoxide jq just
 
 # Python
 brew install pyenv uv ruff
 pip install httpie pgcli rich
 
-# Segurança
+# Security
 brew install gitleaks
 ```
 
-### Projeto Full-Stack com Docker
+### Full-Stack with Docker
 
 ```bash
-# Essenciais
+# Essentials
 brew install gh lazygit ripgrep fd bat jq
 
 # Docker/Infra
@@ -600,49 +594,49 @@ brew install lazydocker ctop dive k9s
 brew install httpie
 ```
 
-### Projeto Java/Spring Boot
+### Java/Spring Boot Project
 
 ```bash
-# SDKMAN (instala tudo do ecossistema Java)
+# SDKMAN (installs all Java ecosystem tools)
 curl -s "https://get.sdkman.io" | bash && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # JDK + build
 sdk install java 21.0.5-tem
 sdk install maven
-sdk install mvnd        # Maven paralelo
+sdk install mvnd        # Parallel Maven
 sdk install springboot  # Spring Boot CLI
 
-# Essenciais de terminal
+# Terminal essentials
 brew install gh lazygit git-delta ripgrep fd bat jq httpie gitleaks
 
-# Banco de dados
+# Database
 brew install pgcli flyway
 
-# Docker para dependências locais
+# Docker for local dependencies
 brew install lazydocker
 ```
 
 ---
 
-## Quando Instalar o Quê
+## When to Install What
 
-| Situação | Instale |
+| Situation | Install |
 |----------|---------|
-| Iniciar qualquer projeto | `gh`, `ripgrep`, `fd`, `bat`, `fzf`, `jq`, `just` |
-| Antes de commit | `gitleaks` (varre secrets), `git-delta` (diff legível) |
-| Testar API | `httpie` ou `xh`, `websocat` para WS |
-| Debug de containers | `lazydocker`, `ctop`, `dive` |
-| Novo projeto Node | `fnm`, `pnpm`, `tsx`, `npm-check-updates` |
-| Novo projeto Python | `uv`, `ruff`, `pyenv` |
-| Novo projeto Java/Spring | `sdkman`, JDK 21 Temurin, `mvnd`, `springboot` CLI |
-| Diagnosticar JVM | `jps`, `jstack`, `jmap`, `visualvm` |
-| Migrations SQL | `flyway` ou `liquibase` |
-| Build native image | GraalVM via SDKMAN + `quarkus build --native` |
-| Deploy cloud | `awscli` ou equivalente, `mkcert` para HTTPS local |
+| Starting any project | `gh`, `ripgrep`, `fd`, `bat`, `fzf`, `jq`, `just` |
+| Before commit | `gitleaks` (scan secrets), `git-delta` (readable diff) |
+| Testing APIs | `httpie` or `xh`, `websocat` for WS |
+| Debugging containers | `lazydocker`, `ctop`, `dive` |
+| New Node project | `fnm`, `pnpm`, `tsx`, `npm-check-updates` |
+| New Python project | `uv`, `ruff`, `pyenv` |
+| New Java/Spring project | `sdkman`, JDK 21 Temurin, `mvnd`, `springboot` CLI |
+| JVM diagnostics | `jps`, `jstack`, `jmap`, `visualvm` |
+| SQL migrations | `flyway` or `liquibase` |
+| Native image build | GraalVM via SDKMAN + `quarkus build --native` |
+| Cloud deploy | `awscli` or equivalent, `mkcert` for local HTTPS |
 
 ---
 
-## Checklist de Máquina Nova
+## New Machine Checklist
 
 ```bash
 # 1. Package manager (macOS)
@@ -655,7 +649,7 @@ brew install git gh ripgrep fd bat eza fzf zoxide jq yq just direnv starship
 brew install lazygit git-delta
 gh auth login
 
-# 4. Shell (adicione ao .zshrc / .bashrc)
+# 4. Shell (add to .zshrc / .bashrc)
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"
@@ -666,6 +660,6 @@ echo 'eval "$(fnm env --use-on-cd)"' >> ~/.zshrc
 fnm install --lts
 npm i -g pnpm tsx
 
-# 6. Segurança
+# 6. Security
 brew install gitleaks
 ```

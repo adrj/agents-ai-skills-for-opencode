@@ -3,6 +3,9 @@ name: interface-design
 description: Use when building UI components, dashboards, apps or admin panels. Applies principle-based design with persistent memory of decisions across sessions for consistent interfaces.
 license: MIT
 compatibility: opencode
+min_version: 1.0.0
+scope: [project]
+tags: [ui, design, frontend, consistency]
 metadata:
   source: https://github.com/Dammyjay93/interface-design
   adapted-for: opencode

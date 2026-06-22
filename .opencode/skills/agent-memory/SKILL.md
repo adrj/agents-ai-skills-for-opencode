@@ -3,6 +3,9 @@ name: agent-memory
 description: Persistent, self-editable memory blocks inspired by Letta agents. Gives the agent persistent memory that carries across sessions and can be modified by the agent itself during operation.
 license: MIT
 compatibility: opencode
+min_version: 1.0.0
+scope: [project]
+tags: [memory, persistence, learning, knowledge]
 metadata:
   source: https://github.com/joshuadavidthomas/opencode-agent-memory
   adapted-for: opencode

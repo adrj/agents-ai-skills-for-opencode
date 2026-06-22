@@ -3,6 +3,9 @@ name: dynamic-context-pruning
 description: Optimizes token usage by pruning obsolete tool outputs from conversation context. Reduces token consumption while maintaining relevant context for better performance.
 license: MIT
 compatibility: opencode
+min_version: 1.0.0
+scope: [global]
+tags: [tokens, performance, optimization, context]
 metadata:
   source: https://github.com/Tarquinen/opencode-dynamic-context-pruning
   adapted-for: opencode
@@ -23,6 +26,7 @@ Use this skill when:
 - Token usage is becoming a concern
 - You want to maintain performance while reducing costs
 - Working with models that have limited context windows
+- **Using MCP servers or skills that generate large outputs** (e.g. firecrawl-web, web search) — MCP tool descriptions and results are a major source of context bloat
 
 ## How It Works
 

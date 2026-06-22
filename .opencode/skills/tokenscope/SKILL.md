@@ -3,6 +3,9 @@ name: tokenscope
 description: Comprehensive token analysis and cost tracking for opencode sessions. Provides detailed insights into token usage patterns, provider costs, and optimization opportunities with advanced reporting capabilities.
 license: MIT
 compatibility: opencode
+min_version: 1.0.0
+scope: [global]
+tags: [tokens, cost, analysis, reporting, optimization]
 metadata:
   source: https://github.com/ramtinJ95/opencode-tokenscope
   adapted-for: opencode
@@ -126,7 +129,7 @@ Use this skill when:
 
 ### With Other Skills
 
-- **context-analysis**: Complementary detailed context analysis
+- **context-analysis**: Complementary detailed context analysis — **but avoid loading both simultaneously** (significant overlap; prefer context-analysis for lightweight use, this skill for advanced reporting)
 - **dynamic-context-pruning**: Use insights to guide pruning decisions
 - **opencode-mem**: Track memory impact on token usage
 - **agent-memory**: Monitor file-based memory costs

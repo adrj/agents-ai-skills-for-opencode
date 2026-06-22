@@ -3,6 +3,9 @@ name: test-driven-development
 description: Use when implementing any feature or bugfix. Write the test first, watch it fail, then write minimal code to pass. No production code without a failing test first.
 license: MIT
 compatibility: opencode
+min_version: 1.0.0
+scope: [project]
+tags: [testing, tdd, quality, workflow]
 metadata:
   source: https://github.com/obra/superpowers/tree/main/skills/test-driven-development
   adapted-for: opencode

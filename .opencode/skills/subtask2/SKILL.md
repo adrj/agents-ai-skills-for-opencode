@@ -3,6 +3,9 @@ name: subtask2
 description: Orchestration system that extends opencode's /commands into a powerful system with granular flow control, parallel execution, error handling, and advanced scheduling capabilities.
 license: MIT
 compatibility: opencode
+min_version: 1.0.0
+scope: [project]
+tags: [orchestration, workflow, automation, tasks]
 metadata:
   source: https://github.com/spoons-and-mirrors/subtask2
   adapted-for: opencode

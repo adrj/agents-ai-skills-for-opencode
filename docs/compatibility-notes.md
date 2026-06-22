@@ -1,73 +1,73 @@
-# Notas de Compatibilidade
+# Compatibility Notes
 
-Análise detalhada de compatibilidade de cada ferramenta com OpenCode.
+Detailed compatibility analysis of each tool with OpenCode.
 
 ---
 
 ## claude-mem (thedotmack/claude-mem)
 
-**Status: Não compatível**
+**Status: Not compatible**
 
-**Por quê:** O claude-mem é um plugin system completo do Claude Code que depende de:
-- Sistema de hooks do Claude Code (`/plugin install`, `SessionStart`, `PostToolUse`, etc.)
-- Worker service próprio rodando na porta 37777 (Bun)
-- Sistema `/plugin marketplace` exclusivo do Claude Code
-- Integração com `claude agent-sdk`
+**Why:** claude-mem is a complete Claude Code plugin system that depends on:
+- Claude Code hook system (`/plugin install`, `SessionStart`, `PostToolUse`, etc.)
+- Its own worker service on port 37777 (Bun)
+- Claude Code's exclusive `/plugin marketplace` system
+- Integration with `claude agent-sdk`
 
-O OpenCode não tem equivalente ao sistema de plugins do Claude Code. Não existe forma de portar o claude-mem sem reescrever toda a arquitetura.
+OpenCode has no equivalent of the Claude Code plugin system. There is no way to port claude-mem without rewriting the entire architecture.
 
-**Alternativa para OpenCode:** A skill `napkin` (portada aqui) resolve o problema de memória persistente de forma mais simples — um arquivo markdown por repo que cresce com aprendizados.
+**OpenCode alternative:** The `napkin` skill (ported here) solves persistent memory more simply — a markdown file per repo that grows with learnings.
 
 ---
 
 ## obra/superpowers skills
 
-**Status: Compatível (com adaptação)**
+**Status: Compatible (with adaptation)**
 
-**O quê funciona:** As skills são arquivos `SKILL.md` com frontmatter YAML — exatamente o formato que o OpenCode suporta. Foram portadas:
+**What works:** The skills are `SKILL.md` files with YAML frontmatter — exactly the format OpenCode supports. Ported:
 - `systematic-debugging`
 - `test-driven-development`
 - `finishing-a-branch`
 
-**O que não funciona:**
-- Referências cruzadas entre skills (`superpowers:test-driven-development`) não funcionam no OpenCode — o agente precisa carregar cada skill separadamente
-- Alguns arquivos auxiliares (`root-cause-tracing.md`, `testing-anti-patterns.md`) foram omitidos por simplificação — podem ser adicionados como arquivos extras na pasta da skill
+**What doesn't work:**
+- Cross-references between skills (`superpowers:test-driven-development`) don't work in OpenCode — the agent must load each skill separately
+- Some auxiliary files (`root-cause-tracing.md`, `testing-anti-patterns.md`) were omitted for simplicity — can be added as extra files in the skill folder
 
-**Skills disponíveis no superpowers não portadas aqui:**
-- `brainstorming` — pode ser portada diretamente
-- `dispatching-parallel-agents` — relevante para OpenCode que tem Task tool
-- `executing-plans` — portável
-- `receiving-code-review` / `requesting-code-review` — portáveis
-- `subagent-driven-development` — muito relevante para OpenCode
-- `using-git-worktrees` — portável
-- `verification-before-completion` — portável
-- `writing-plans` — portável
-- `writing-skills` — portável (meta-skill para criar novas skills)
+**Superpowers skills not yet ported:**
+- `brainstorming` — directly portable
+- `dispatching-parallel-agents` — relevant for OpenCode's Task tool
+- `executing-plans` — portable
+- `receiving-code-review` / `requesting-code-review` — portable
+- `subagent-driven-development` — very relevant for OpenCode
+- `using-git-worktrees` — portable
+- `verification-before-completion` — portable
+- `writing-plans` — portable
+- `writing-skills` — portable (meta-skill for creating new skills)
 
 ---
 
 ## interface-design (Dammyjay93/interface-design)
 
-**Status: Parcialmente compatível**
+**Status: Partially compatible**
 
-**O quê funciona:** A skill em si foi portada — o conteúdo de design system, decisões persistentes via `system.md`, e o workflow são completamente portáveis.
+**What works:** The skill itself was ported — the design system content, persistent decisions via `system.md`, and the workflow are fully portable.
 
-**O que não funciona:**
-- Comandos `/interface-design:status`, `/interface-design:audit`, `/interface-design:extract` são comandos do Claude Code, não do OpenCode
-- O sistema de plugins (`.claude-plugin/`) não existe no OpenCode
-- Hooks automáticos de sessão não existem no OpenCode (a skill precisa ser ativada explicitamente)
+**What doesn't work:**
+- `/interface-design:status`, `/interface-design:audit`, `/interface-design:extract` are Claude Code commands, not OpenCode commands
+- The plugin system (`.claude-plugin/`) doesn't exist in OpenCode
+- Automatic session hooks don't exist in OpenCode (skill must be activated explicitly)
 
-**Workaround:** Solicite explicitamente ao agente: "Use a skill interface-design e carregue o system.md se existir".
+**Workaround:** Explicitly ask the agent: "Use the interface-design skill and load system.md if it exists."
 
 ---
 
 ## microsoft/playwright-mcp
 
-**Status: Totalmente compatível**
+**Status: Fully compatible**
 
-O playwright-mcp é um MCP server padrão. O OpenCode suporta MCPs nativamente via `opencode.json`. A configuração é trivial.
+playwright-mcp is a standard MCP server. OpenCode supports MCPs natively via `opencode.json`. Configuration is trivial.
 
-A própria documentação do playwright-mcp já inclui exemplo para OpenCode:
+The playwright-mcp docs already include an OpenCode example:
 
 ```json
 {
@@ -81,18 +81,18 @@ A própria documentação do playwright-mcp já inclui exemplo para OpenCode:
 }
 ```
 
-**Nota importante da documentação do playwright-mcp:**
-> Para coding agents, o Playwright CLI com SKILLS é mais eficiente em tokens que o MCP. O MCP é melhor para loops agênticos com estado persistente do browser.
+**Important note from playwright-mcp docs:**
+> For coding agents, the Playwright CLI with SKILLS is more token-efficient than MCP. MCP is better for long agentic loops with persistent browser state.
 
 ---
 
 ## firecrawl CLI
 
-**Status: Totalmente compatível**
+**Status: Fully compatible**
 
-A skill `firecrawl-web` ensina o agente a usar o CLI do Firecrawl. Não há dependências de sistema específicas do Claude Code.
+The `firecrawl-web` skill teaches the agent to use the Firecrawl CLI. No Claude Code-specific dependencies.
 
-**Pré-requisito:** O usuário precisa instalar e autenticar o CLI:
+**Prerequisite:** User must install and authenticate CLI:
 ```bash
 npm install -g firecrawl-cli
 firecrawl login
@@ -102,13 +102,13 @@ firecrawl login
 
 ## blader/napkin
 
-**Status: Totalmente compatível (adaptada)**
+**Status: Fully compatible (adapted)**
 
-A skill napkin original usa `.claude/napkin.md` — adaptamos para `.opencode/napkin.md` para seguir a convenção do OpenCode. O comportamento é idêntico.
+The original napkin skill uses `.claude/napkin.md` — we adapted it to `.opencode/napkin.md` to follow OpenCode conventions. Behavior is identical.
 
-**Diferença importante:** No Claude Code original, a skill era ativada automaticamente via hooks de sessão. No OpenCode, a skill precisa estar na lista de skills disponíveis e o agente a carrega sob demanda. A instrução "ativa toda sessão" no SKILL.md orienta o agente a sempre consultar o napkin, mas não há garantia técnica de automação como no Claude Code.
+**Key difference:** In the original Claude Code, the skill activated automatically via session hooks. In OpenCode, the skill must be in the available skills list and the agent loads it on demand. The "auto-activates every session" instruction in SKILL.md guides the agent to always check the napkin, but there's no technical automation guarantee like Claude Code.
 
-**Workaround:** Adicione ao seu `AGENTS.md` do projeto:
+**Workaround:** Add to your project's `AGENTS.md`:
 ```markdown
-Antes de começar qualquer tarefa, leia `.opencode/napkin.md` se existir.
+Before starting any task, read `.opencode/napkin.md` if it exists.
 ```

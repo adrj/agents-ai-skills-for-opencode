@@ -3,6 +3,9 @@ name: finishing-a-branch
 description: Use when completing a feature branch before creating a PR. Ensures tests pass, code is clean, commits are organized, and PR description is thorough.
 license: MIT
 compatibility: opencode
+min_version: 1.0.0
+scope: [project]
+tags: [git, workflow, pr, quality, collaboration]
 metadata:
   source: https://github.com/obra/superpowers/tree/main/skills/finishing-a-development-branch
   adapted-for: opencode

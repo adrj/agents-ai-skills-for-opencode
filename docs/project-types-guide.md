@@ -1,167 +1,167 @@
-# Guia de Skills por Tipo de Projeto
+# Skills Guide by Project Type
 
-Este documento serve como referência rápida para identificar quais skills são mais adequadas dependendo do tipo e contexto do projeto.
+Quick reference for identifying which skills are most suitable depending on your project type and context.
 
 ---
 
-## Projeto Básico / Genérico
+## Basic / General Project
 
-Projetos simples, scripts, automações, ou quando você precisa de orientação geral.
+Simple projects, scripts, automations, or when you need general guidance.
 
-### Essenciais
-| Skill | Quando usar |
+### Essential
+| Skill | When to use |
 |-------|-------------|
-| `systematic-debugging` | Qualquer bug ou erro inesperado |
-| `finishing-a-branch` | Antes de finalizar trabalho ou criar PR |
-| `napkin` | Memória persistente de aprendizados do projeto |
+| `systematic-debugging` | Any bug or unexpected error |
+| `finishing-a-branch` | Before finalizing work or creating a PR |
+| `napkin` | Persistent memory of project learnings |
 
-### Recomendados
-| Skill | Quando usar |
+### Recommended
+| Skill | When to use |
 |-------|-------------|
-| `dev-cli-tools` | Dúvidas sobre ferramentas CLI disponíveis |
-| `test-driven-development` | Ao escrever testes unitários |
+| `dev-cli-tools` | Questions about available CLI tools |
+| `test-driven-development` | When writing unit tests |
 
 ---
 
 ## Frontend / Web
 
-Projetos React, Vue, Next.js, ou qualquer aplicação web com interface.
+React, Vue, Next.js, or any web application with a UI.
 
-### Essenciais
-| Skill | Quando usar |
+### Essential
+| Skill | When to use |
 |-------|-------------|
-| `interface-design` | Design de UI consistente, espaçamento, cores |
-| `systematic-debugging` | Bugs em componentes ou estado |
-| `test-driven-development` | Testes de componentes React/Vue |
+| `interface-design` | Consistent UI design, spacing, colors |
+| `systematic-debugging` | Component or state bugs |
+| `test-driven-development` | React/Vue component tests |
 
-### Recomendados
-| Skill | Quando usar |
+### Recommended
+| Skill | When to use |
 |-------|-------------|
-| `finishing-a-branch` | Antes de fazer deploy ou PR |
-| `napkin` | Manter padrão de design entre sessões |
-| `firecrawl-web` | Precisa capturar conteúdo de sites para análise |
+| `finishing-a-branch` | Before deploying or creating a PR |
+| `napkin` | Maintaining design patterns across sessions |
+| `firecrawl-web` | Capturing website content for analysis |
 
 ---
 
 ## Backend / API
 
-Projetos Node.js, Python, Java, ou qualquer serviço de API.
+Node.js, Python, Java, or any API service.
 
-### Essenciais
-| Skill | Quando usar |
+### Essential
+| Skill | When to use |
 |-------|-------------|
-| `systematic-debugging` | Erros de API, banco de dados, conexão |
-| `test-driven-development` | Testes de endpoints e lógica de negócio |
-| `finishing-a-branch` | Antes de deploy ou release |
+| `systematic-debugging` | API errors, database issues, connection problems |
+| `test-driven-development` | Endpoint and business logic tests |
+| `finishing-a-branch` | Before deploy or release |
 
-### Recomendados
-| Skill | Quando usar |
+### Recommended
+| Skill | When to use |
 |-------|-------------|
-| `dev-cli-tools` | Orientação sobre ferramentas por stack (Node/Python/Java) |
-| `napkin` | Documentar decisões de arquitetura |
+| `dev-cli-tools` | Tool guidance per stack (Node/Python/Java) |
+| `napkin` | Documenting architecture decisions |
 
 ---
 
-## Projeto de Dados / Análise
+## Data / Analytics Project
 
-Jupyter notebooks, scripts de ETL, dashboards, analytics.
+Jupyter notebooks, ETL scripts, dashboards, analytics.
 
-### Essenciais
-| Skill | Quando usar |
+### Essential
+| Skill | When to use |
 |-------|-------------|
-| `systematic-debugging` | Erros em transformações de dados |
-| `dev-cli-tools` | Ferramentas como `jq`, `fx`, `dasel`, `visidata` |
+| `systematic-debugging` | Data transformation errors |
+| `dev-cli-tools` | Tools like `jq`, `fx`, `dasel`, `visidata` |
 
-### Recomendados
-| Skill | Quando usar |
+### Recommended
+| Skill | When to use |
 |-------|-------------|
-| `finishing-a-branch` | Validação antes de usar dados em produção |
-| `napkin` | Documentar fontes de dados e transformações |
+| `finishing-a-branch` | Validation before using data in production |
+| `napkin` | Documenting data sources and transformations |
 
 ---
 
-## Projeto em Equipe / Colaborativo
+## Team / Collaborative Project
 
-Quando múltiplos desenvolvedores trabalham no mesmo código.
+Multiple developers working on the same codebase.
 
-### Essenciais
-| Skill | Quando usar |
+### Essential
+| Skill | When to use |
 |-------|-------------|
-| `finishing-a-branch` | **Sempre** antes de criar PR |
-| `systematic-debugging` | Bugs reportados por outros |
-| `napkin` | Compartilhar aprendizados com a equipe |
+| `finishing-a-branch` | **Always** before creating a PR |
+| `systematic-debugging` | Bugs reported by others |
+| `napkin` | Sharing learnings with the team |
 
-### Recomendados
-| Skill | Quando usar |
+### Recommended
+| Skill | When to use |
 |-------|-------------|
-| `test-driven-development` | Garantir que novos código têm testes |
-| `interface-design` | Manter consistência quando há múltiplos contribuidores |
+| `test-driven-development` | Ensuring new code has tests |
+| `interface-design` | Maintaining consistency across contributors |
 
 ---
 
-## Projeto de Longa Duração
+## Long-Term Project
 
-Projetos que se estendem por semanas/meses, com múltiplas sessões.
+Projects spanning weeks/months with multiple sessions.
 
-### Essenciais
-| Skill | Quando usar |
+### Essential
+| Skill | When to use |
 |-------|-------------|
-| `napkin` | **Sempre** — acumular aprendizados entre sessões |
-| `systematic-debugging` | Bugs de regressão |
-| `finishing-a-branch` | Manter qualidade ao longo do tempo |
+| `napkin` | **Always** — accumulate learnings across sessions |
+| `systematic-debugging` | Regression bugs |
+| `finishing-a-branch` | Maintaining quality over time |
 
-### Recomendados
-| Skill | Quando usar |
+### Recommended
+| Skill | When to use |
 |-------|-------------|
-| `opencode-roadmap` | Planejamento de milestones e dependências |
-| `context-analysis` | Monitorar uso de tokens em sessões longas |
-| `dynamic-context-pruning` | Manter performance em conversas extensas |
+| `opencode-roadmap` | Milestone and dependency planning |
+| `context-analysis` | Monitoring token usage in long sessions |
+| `dynamic-context-pruning` | Maintaining performance in extended conversations |
 
 ---
 
-## Projeto com Necessidades Especiais
+## Special-Needs Projects
 
-### Ia Agent / Machine Learning
-| Skill | Quando usar |
+### AI / Machine Learning
+| Skill | When to use |
 |-------|-------------|
 | `dev-cli-tools` | Python, uv, ruff, jupyter tools |
-| `test-driven-development` | Testes de modelos e pipelines |
+| `test-driven-development` | Model and pipeline tests |
 
-### DevOps / Infraestrutura
-| Skill | Quando usar |
+### DevOps / Infrastructure
+| Skill | When to use |
 |-------|-------------|
 | `dev-cli-tools` | Docker, kubectl, awscli, terraform |
-| `systematic-debugging` | Logs, containers, redes |
-| `finishing-a-branch` | Validação antes de apply |
+| `systematic-debugging` | Logs, containers, networks |
+| `finishing-a-branch` | Validation before apply |
 
-### Segurança / Auditoria
-| Skill | Quando usar |
+### Security / Audit
+| Skill | When to use |
 |-------|-------------|
 | `dev-cli-tools` | gitleaks, trufflehog, age, op |
-| `finishing-a-branch` | Verificar secrets antes de push |
+| `finishing-a-branch` | Checking for secrets before push |
 
 ---
 
 ## Quick Reference
 
 ```
-Projeto novo?              → systematic-debugging, napkin, finishing-a-branch
-Bug para resolver?         → systematic-debugging
-Escrevendo testes?         → test-driven-development
-Design de UI?              → interface-design
-Dúvida sobre ferramentas? → dev-cli-tools
-Antes de PR?               → finishing-a-branch
-Projeto de longo prazo?   → napkin, context-analysis
-Sessão muito longa?        → dynamic-context-pruning
+New project?              → systematic-debugging, napkin, finishing-a-branch
+Bug to fix?               → systematic-debugging
+Writing tests?            → test-driven-development
+UI design?                → interface-design
+Tool questions?           → dev-cli-tools
+Before PR?                → finishing-a-branch
+Long-term project?        → napkin, context-analysis
+Very long session?        → dynamic-context-pruning
 ```
 
 ---
 
-## Como usar este guia
+## How to Use This Guide
 
-1. **Identifique o tipo do seu projeto** na lista acima
-2. **Ative as skills essenciais** recomendadas
-3. **Adicione as recomendadas** conforme necessário
-4. **Consulte a Quick Reference** para decisões rápidas
+1. **Identify your project type** from the list above
+2. **Activate the essential skills** recommended
+3. **Add recommended skills** as needed
+4. **Consult the Quick Reference** for fast decisions
 
-Lembre-se: você pode carregar múltiplas skills simultaneamente e o OpenCode as usará conforme o contexto.
+Remember: you can load multiple skills simultaneously and OpenCode will use them as context dictates.

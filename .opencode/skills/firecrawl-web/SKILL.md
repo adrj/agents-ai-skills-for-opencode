@@ -3,6 +3,9 @@ name: firecrawl-web
 description: Use when you need to scrape websites, search the web, map site URLs, or do web research. Requires firecrawl-cli installed and authenticated. Use for gathering content from URLs or web searches.
 license: MIT
 compatibility: opencode
+min_version: 1.0.0
+scope: [global]
+tags: [web, scraping, search, research]
 metadata:
   source: https://docs.firecrawl.dev/sdks/cli
   adapted-for: opencode
@@ -12,114 +15,30 @@ metadata:
 
 Use the Firecrawl CLI to scrape, search, crawl and interact with web content.
 
-## Setup (one-time)
+## Setup
 
-```bash
-# Install globally
-npm install -g firecrawl-cli
+`npm install -g firecrawl-cli && firecrawl login`
 
-# Authenticate
-firecrawl login
+## Quick Reference
 
-# Verify
-firecrawl --status
-```
+| Need | Run |
+|------|-----|
+| Read a page | `firecrawl <url> --only-main-content` |
+| Web search | `firecrawl search "query" --scrape` |
+| List URLs on a site | `firecrawl map <url>` |
+| Crawl a site | `firecrawl crawl <url> --wait --limit 100` |
+| AI research | `firecrawl agent "question" --wait` |
 
-## Core Commands
+## Workflow
 
-### Scrape a URL
-
-```bash
-# Get clean markdown content (recommended)
-firecrawl https://example.com --only-main-content
-
-# Get HTML
-firecrawl https://example.com --html
-
-# Multiple formats (returns JSON)
-firecrawl https://example.com --format markdown,links
-
-# Save to file
-firecrawl https://example.com -o output.md
-```
-
-### Search the Web
-
-```bash
-# Basic search
-firecrawl search "query here"
-
-# With limit
-firecrawl search "AI news" --limit 10
-
-# Recent results only
-firecrawl search "tech news" --tbs qdr:d   # last day
-firecrawl search "tech news" --tbs qdr:w   # last week
-
-# Search and scrape results
-firecrawl search "documentation" --scrape --scrape-formats markdown
-```
-
-### Discover URLs on a Site
-
-```bash
-# Map all URLs
-firecrawl map https://example.com
-
-# Filter by pattern
-firecrawl map https://example.com --search "blog"
-
-# Include subdomains
-firecrawl map https://example.com --include-subdomains
-```
-
-### Crawl Entire Site
-
-```bash
-# Crawl and wait for completion
-firecrawl crawl https://example.com --wait --limit 100 --max-depth 3
-
-# With progress
-firecrawl crawl https://example.com --wait --progress -o results.json
-```
-
-### AI Agent Search
-
-```bash
-# Natural language research (no URLs needed)
-firecrawl agent "Find the top 5 AI startups and their funding amounts" --wait
-
-# Focus on specific URLs
-firecrawl agent "Compare pricing plans" --urls https://slack.com/pricing --wait
-```
-
-## When to Use Each Command
-
-| Task | Command |
-|------|---------|
-| Read a specific page | `firecrawl <url> --only-main-content` |
-| Web research | `firecrawl search "query" --scrape` |
-| Find all pages on a site | `firecrawl map <url>` |
-| Download entire docs site | `firecrawl crawl <url> --wait` |
-| AI-powered research | `firecrawl agent "research question" --wait` |
+1. **Search** → `firecrawl search "topic" --limit 10 --pretty`
+2. **Scrape top result** → `firecrawl <url> --only-main-content`
+3. **If results are large, save to file** → redirect to `-o` and use `head`/`tail`/`grep` to read selectively
+4. After done, consider running `/context prune` to clear tool outputs (via dynamic-context-pruning)
 
 ## Tips
 
-- Always use `--only-main-content` for cleaner output when reading articles
-- Use `--tbs qdr:d` for recent news/events
-- Pipe output: `firecrawl https://example.com | head -100`
-- Save JSON with pretty formatting: `firecrawl ... --pretty -o results.json`
+- `--only-main-content` for clean reading; `--tbs qdr:d` for recent results
+- Write results to filesystem (`-o file.md`) instead of keeping in context
 - Check credits: `firecrawl credit-usage`
-
-## Workflow Example: Research a Topic
-
-```bash
-# 1. Search for sources
-firecrawl search "opencode agent skills" --limit 10 --pretty
-
-# 2. Scrape the most relevant result
-firecrawl https://opencode.ai/docs/skills/ --only-main-content
-
-# 3. If you need the whole site
-firecrawl crawl https://opencode.ai/docs/ --wait --limit 50 -o docs.json
-```
+- For full CLI reference, see `ops/firecrawl-commands.md`

@@ -3,6 +3,9 @@ name: pocket-universe
 description: Subagent driven pocket universe plugin that extends opencode's native subagent paradigm to provide resilient, async, closed-loop agents that block the main thread's execution.
 license: MIT
 compatibility: opencode
+min_version: 1.0.0
+scope: [project]
+tags: [subagent, async, orchestration, parallel]
 metadata:
   source: https://github.com/spoons-and-mirrors/pocket-universe
   adapted-for: opencode

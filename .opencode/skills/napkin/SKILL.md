@@ -3,6 +3,9 @@ name: napkin
 description: Maintain a per-repo markdown runbook with persistent memory of mistakes, corrections, and patterns. Activates every session to improve agent behavior over time.
 license: MIT
 compatibility: opencode
+min_version: 1.0.0
+scope: [project]
+tags: [memory, learning, workflow, productivity]
 metadata:
   source: https://github.com/blader/napkin
   adapted-for: opencode

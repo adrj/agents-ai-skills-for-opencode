@@ -3,6 +3,9 @@ name: opencode-roadmap
 description: Strategic roadmap planning and multi-agent coordination plugin. Provides project-wide planning capabilities with timeline management, milestone tracking, and resource allocation.
 license: MIT
 compatibility: opencode
+min_version: 1.0.0
+scope: [project]
+tags: [planning, roadmap, project-management, coordination]
 metadata:
   source: https://github.com/IgorWarzocha/Opencode-Roadmap
   adapted-for: opencode

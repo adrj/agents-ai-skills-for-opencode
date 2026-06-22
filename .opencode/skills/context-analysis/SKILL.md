@@ -3,6 +3,9 @@ name: context-analysis
 description: Detailed token usage analysis for AI sessions. Provides insights into token consumption patterns, cost tracking, and optimization opportunities.
 license: MIT
 compatibility: opencode
+min_version: 1.0.0
+scope: [global]
+tags: [tokens, analysis, cost, optimization, monitoring]
 metadata:
   source: https://github.com/IgorWarzocha/Opencode-Context-Analysis-Plugin
   adapted-for: opencode
@@ -121,7 +124,14 @@ Use this skill when:
 - **dynamic-context-pruning**: Use analysis to guide pruning decisions
 - **opencode-mem**: Track memory impact on token usage
 - **agent-memory**: Monitor file-based memory costs
-- **tokenscope**: Complementary detailed token analysis
+- **tokenscope**: Complementary detailed token analysis — **but avoid loading both simultaneously** (significant overlap; prefer this one for lightweight analysis, tokenscope for advanced reporting)
+
+### Measuring tool overhead
+
+Use context-analysis to compare sessions with and without specific MCPs/skills:
+1. Run a task without the tool → record token cost
+2. Run same task with the tool → record token cost
+3. Difference = tool overhead. If overhead > benefit, disable the tool.
 
 ### Tool Integration
 
