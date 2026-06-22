@@ -4,26 +4,9 @@ Curated skills and subagents for [OpenCode](https://opencode.ai), adapted from t
 
 ---
 
-## Agent Model Mapping
+## Agents
 
-Each subagent runs on an optimized model for its task tier. Configure your `opencode.json` or agent files accordingly.
-
-| Tier | Model | Subagents |
-|------|-------|-----------|
-| **Free** 🆓 | `deepseek/deepseek-v4-flash` | frontend-jr, accessibility-tester, db-optimizer, docker-expert, ci-pipeline, test-automator, error-detective, api-designer, deployment-engineer, migration, git-workflow, docs-writer |
-| **Light** 💰 | `qwen/qwen3.6-plus`, `minimax/m3`, `mimo/mimo-v2.5-pro` | kubernetes, terraform, prompt-engineer |
-| **Medium** 💰 | `qwen/qwen3.7-plus`, `glm/glm-5.1` | backend, code-reviewer, refactorer |
-| **Heavy** 💰💰 | `deepseek/deepseek-v4-pro`, `glm/glm-5.2` | frontend-sr, security-auditor, performance-engineer |
-
-**Total:** 12 free 🆓 | 6 paid 💰 | 3 heavy 💰💰
-
-### Model Aliases (for quick substitution)
-
-```bash
-# Examples: swap all agents to a different model tier
-sed -i 's/deepseek\/deepseek-v4-flash/<new-free-model>/g' .opencode/agents/*.md
-sed -i 's/qwen\/qwen3.7-plus/<new-medium-model>/g' .opencode/agents/*.md
-```
+42 specialist subagents covering 30+ languages, frameworks, and cross-cutting concerns.
 
 ---
 
@@ -75,31 +58,52 @@ OpenCode discovers skills via `SKILL.md` with YAML frontmatter.
 
 ## Subagents (specialist agents with dedicated models)
 
-21 subagents adapted from [weisser-dev/awesome-opencode](https://github.com/weisser-dev/awesome-opencode). Each runs on its optimal model and temperature. Invoke with `@name` in chat.
+42 subagents covering 30+ languages, frameworks, and cross-cutting concerns. Each runs on its optimal model and temperature. Invoke with `@name` in chat.
 
-| Subagent | Model | Tier | Role |
-|---|---|---|---|
-| `frontend-jr` | DeepSeek V4 Flash | 🆓 | Simple components, markup, styles |
-| `frontend-sr` | DeepSeek V4 Pro | 💰💰 | Complex frontend architecture, state, SSR |
-| `accessibility-tester` | DeepSeek V4 Flash | 🆓 | WCAG compliance, accessibility auditing |
-| `backend` | Qwen3.7 Plus | 💰 | REST APIs, business logic, auth |
-| `db-optimizer` | DeepSeek V4 Flash | 🆓 | Query plans, indexes, schema design |
-| `docker-expert` | DeepSeek V4 Flash | 🆓 | Multi-stage Dockerfiles, compose |
-| `ci-pipeline` | DeepSeek V4 Flash | 🆓 | GitHub Actions, GitLab CI |
-| `test-automator` | DeepSeek V4 Flash | 🆓 | Unit, integration, e2e tests |
-| `code-reviewer` | GLM-5.1 | 💰 | PR review with structured checklist |
-| `security-auditor` | DeepSeek V4 Pro | 💰💰 | IAM, encryption, compliance hardening |
-| `performance-engineer` | GLM-5.2 | 💰💰 | Hot paths, N+1 queries, caching |
-| `refactorer` | GLM-5.1 | 💰 | Behavior-preserving code refactoring |
-| `error-detective` | DeepSeek V4 Flash | 🆓 | Stack trace analysis, error patterns |
-| `api-designer` | DeepSeek V4 Flash | 🆓 | OpenAPI spec, schemas, versioning |
-| `deployment-engineer` | DeepSeek V4 Flash | 🆓 | Rolling update, blue/green, canary |
-| `kubernetes` | Qwen3.6 Plus | 💰 | K8s manifests, helm, cluster config |
-| `terraform` | MiniMax M3 | 💰 | IaC with Terraform/OpenTofu |
-| `migration` | DeepSeek V4 Flash | 🆓 | SQL migrations with rollback |
-| `git-workflow` | DeepSeek V4 Flash | 🆓 | Branching strategies, conventional commits |
-| `prompt-engineer` | MiMo-V2.5-Pro | 💰 | Prompt design, few-shot, CoT |
-| `docs-writer` | DeepSeek V4 Flash | 🆓 | ADRs, changelogs, postmortems, READMEs |
+| Subagent | Role |
+|---|---|
+| `accessibility-tester` | WCAG compliance, accessibility auditing |
+| `angular-architect` | Signals, standalone, NgRx |
+| `api-designer` | OpenAPI spec, schemas, versioning |
+| `business-analyst` | Requirements, user stories, specs |
+| `ci-pipeline` | GitHub Actions, GitLab CI |
+| `code-reviewer` | PR review with structured checklist |
+| `cpp-pro` | C++20/23, RAII, templates |
+| `csharp-developer` | ASP.NET Core, EF Core, LINQ |
+| `deployment-engineer` | Rolling update, blue/green, canary |
+| `django-developer` | ORM, REST framework, Celery |
+| `docker-expert` | Multi-stage Dockerfiles, compose |
+| `docs-writer` | ADRs, changelogs, postmortems, READMEs |
+| `elixir-expert` | OTP, GenServer, distributed |
+| `error-detective` | Stack trace analysis, error patterns |
+| `fastapi-developer` | Pydantic, DI, WebSockets |
+| `flutter-expert` | Widgets, state management |
+| `git-workflow` | Branching strategies, conventional commits |
+| `golang-pro` | Goroutines, channels, concurrency |
+| `java-architect` | Spring, JVM tuning, design patterns |
+| `javascript-pro` | ES2024+, async, Web APIs |
+| `kotlin-specialist` | Coroutines, KMP, DSLs |
+| `kubernetes` | K8s manifests, helm, cluster config |
+| `migration` | SQL migrations with rollback |
+| `nextjs-developer` | App Router, Server Actions, ISR |
+| `performance-engineer` | Hot paths, N+1 queries, caching |
+| `php-pro` | PHP 8.x, Composer, PSR |
+| `postgres-pro` | Extensions, tuning, window functions |
+| `product-manager` | Product strategy, roadmaps, prioritization |
+| `project-manager` | Timelines, risk, docs guardianship |
+| `prompt-engineer` | Prompt design, few-shot, CoT |
+| `python-pro` | Typing, asyncio, packaging |
+| `react-specialist` | Hooks, server components, Suspense |
+| `refactorer` | Behavior-preserving code refactoring |
+| `rust-engineer` | Ownership, lifetimes, unsafe |
+| `security-auditor` | IAM, encryption, compliance hardening |
+| `spring-boot-engineer` | WebFlux, Security, Data JPA |
+| `swift-expert` | SwiftUI, Combine, async/await |
+| `technical-writer` | Developer docs, tutorials, onboarding |
+| `terraform` | IaC with Terraform/OpenTofu |
+| `test-automator` | Unit, integration, e2e tests |
+| `typescript-pro` | Strict typing, generics, inference |
+| `vue-expert` | Composition API, Pinia |
 
 ---
 
@@ -489,28 +493,49 @@ Browser automation via MCP. Best for long agentic loops with persistent browser 
 ```
 agents-skills-for-opencode/
 ├── .opencode/
-│   ├── agents/                        # 21 specialist subagents
-│   │   ├── frontend-jr.md
-│   │   ├── frontend-sr.md
+│   ├── agents/                        # 42 specialist subagents
 │   │   ├── accessibility-tester.md
-│   │   ├── backend.md
-│   │   ├── db-optimizer.md
-│   │   ├── docker-expert.md
-│   │   ├── ci-pipeline.md
-│   │   ├── test-automator.md
-│   │   ├── code-reviewer.md
-│   │   ├── security-auditor.md
-│   │   ├── performance-engineer.md
-│   │   ├── refactorer.md
-│   │   ├── error-detective.md
+│   │   ├── angular-architect.md
 │   │   ├── api-designer.md
+│   │   ├── business-analyst.md
+│   │   ├── ci-pipeline.md
+│   │   ├── code-reviewer.md
+│   │   ├── cpp-pro.md
+│   │   ├── csharp-developer.md
 │   │   ├── deployment-engineer.md
-│   │   ├── kubernetes.md
-│   │   ├── terraform.md
-│   │   ├── migration.md
+│   │   ├── django-developer.md
+│   │   ├── docker-expert.md
+│   │   ├── docs-writer.md
+│   │   ├── elixir-expert.md
+│   │   ├── error-detective.md
+│   │   ├── fastapi-developer.md
+│   │   ├── flutter-expert.md
 │   │   ├── git-workflow.md
+│   │   ├── golang-pro.md
+│   │   ├── java-architect.md
+│   │   ├── javascript-pro.md
+│   │   ├── kotlin-specialist.md
+│   │   ├── kubernetes.md
+│   │   ├── migration.md
+│   │   ├── nextjs-developer.md
+│   │   ├── performance-engineer.md
+│   │   ├── php-pro.md
+│   │   ├── postgres-pro.md
+│   │   ├── product-manager.md
+│   │   ├── project-manager.md
 │   │   ├── prompt-engineer.md
-│   │   └── docs-writer.md
+│   │   ├── python-pro.md
+│   │   ├── react-specialist.md
+│   │   ├── refactorer.md
+│   │   ├── rust-engineer.md
+│   │   ├── security-auditor.md
+│   │   ├── spring-boot-engineer.md
+│   │   ├── swift-expert.md
+│   │   ├── technical-writer.md
+│   │   ├── terraform.md
+│   │   ├── test-automator.md
+│   │   ├── typescript-pro.md
+│   │   └── vue-expert.md
 │   └── skills/
 │       ├── manifest.json              # Index of all skills with tags and metadata
 │       ├── adr-write/SKILL.md
