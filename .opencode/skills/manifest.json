@@ -1,0 +1,393 @@
+{
+  "$schema": "https://raw.githubusercontent.com/awesome-opencode/awesome-opencode/main/data/schema.json",
+  "description": "Curated skills for OpenCode, adapted from community repositories",
+  "skills": [
+    {
+      "name": "adr-write",
+      "description": "Capture and maintain Architecture Decision Records to document technical choices, context, and consequences",
+      "tags": ["architecture", "decisions", "documentation", "workflow"],
+      "scope": ["project"],
+      "source": "https://github.com/weisser-dev/awesome-opencode"
+    },
+    {
+      "name": "agent-memory",
+      "description": "Persistent, self-editable memory blocks inspired by Letta agents",
+      "tags": ["memory", "persistence", "learning", "knowledge"],
+      "scope": ["project"],
+      "source": "https://github.com/joshuadavidthomas/opencode-agent-memory"
+    },
+    {
+      "name": "api-contract",
+      "description": "Design REST and GraphQL APIs with consistent conventions, OpenAPI specs, versioning, and schema-first approach",
+      "tags": ["api", "design", "rest", "openapi", "backend"],
+      "scope": ["project"],
+      "source": "https://github.com/weisser-dev/awesome-opencode"
+    },
+    {
+      "name": "changelog-generate",
+      "description": "Generate CHANGELOG.md from git history in Keep a Changelog format",
+      "tags": ["git", "changelog", "release", "documentation", "workflow"],
+      "scope": ["project"],
+      "source": "https://github.com/weisser-dev/awesome-opencode"
+    },
+    {
+      "name": "ci-pipeline",
+      "description": "Generate CI/CD pipeline config for detected platform with lint, test, build, and deploy stages",
+      "tags": ["ci", "cd", "pipeline", "devops", "automation"],
+      "scope": ["project"],
+      "source": "https://github.com/weisser-dev/awesome-opencode"
+    },
+    {
+      "name": "context-analysis",
+      "description": "Detailed token usage analysis for AI sessions",
+      "tags": ["tokens", "analysis", "cost", "optimization", "monitoring"],
+      "scope": ["global"],
+      "source": "https://github.com/IgorWarzocha/Opencode-Context-Analysis-Plugin"
+    },
+    {
+      "name": "dev-cli-tools",
+      "description": "Reference guide for essential CLI tools in dev projects",
+      "tags": ["cli", "devtools", "reference", "onboarding"],
+      "scope": ["global"],
+      "source": "curado (dev.to, awesome-cli-apps)"
+    },
+    {
+      "name": "dynamic-context-pruning",
+      "description": "Optimizes token usage by pruning obsolete tool outputs",
+      "tags": ["tokens", "performance", "optimization", "context"],
+      "scope": ["global"],
+      "source": "https://github.com/Tarquinen/opencode-dynamic-context-pruning"
+    },
+    {
+      "name": "finishing-a-branch",
+      "description": "Ensures tests pass, code is clean, commits organized before PR",
+      "tags": ["git", "workflow", "pr", "quality", "collaboration"],
+      "scope": ["project"],
+      "source": "https://github.com/obra/superpowers/tree/main/skills/finishing-a-development-branch"
+    },
+    {
+      "name": "firecrawl-web",
+      "description": "Web scraping and search via Firecrawl CLI",
+      "tags": ["web", "scraping", "search", "research"],
+      "scope": ["global"],
+      "source": "https://docs.firecrawl.dev/sdks/cli"
+    },
+    {
+      "name": "handoff",
+      "description": "Creates focused handoff prompts for continuing work in new sessions",
+      "tags": ["workflow", "session", "continuity", "memory"],
+      "scope": ["global"],
+      "source": "https://github.com/joshuadavidthomas/opencode-handoff"
+    },
+    {
+      "name": "interface-design",
+      "description": "Principle-based UI design with persistent memory of decisions",
+      "tags": ["ui", "design", "frontend", "consistency"],
+      "scope": ["project"],
+      "source": "https://github.com/Dammyjay93/interface-design"
+    },
+    {
+      "name": "napkin",
+      "description": "Per-repo markdown runbook with persistent memory of mistakes and patterns",
+      "tags": ["memory", "learning", "workflow", "productivity"],
+      "scope": ["project"],
+      "source": "https://github.com/blader/napkin"
+    },
+    {
+      "name": "opencode-mem",
+      "description": "Persistent memory with vector database for long-term context retention",
+      "tags": ["memory", "vector", "persistence", "search", "knowledge"],
+      "scope": ["project", "global"],
+      "source": "https://github.com/tickernelz/opencode-mem"
+    },
+    {
+      "name": "opencode-roadmap",
+      "description": "Strategic roadmap planning and multi-agent coordination",
+      "tags": ["planning", "roadmap", "project-management", "coordination"],
+      "scope": ["project"],
+      "source": "https://github.com/IgorWarzocha/Opencode-Roadmap"
+    },
+    {
+      "name": "opencode-snippets",
+      "description": "Instant inline text expansion for prompts using #snippet syntax",
+      "tags": ["workflow", "productivity", "prompts", "composition"],
+      "scope": ["global"],
+      "source": "https://github.com/JosXa/opencode-snippets"
+    },
+    {
+      "name": "pocket-universe",
+      "description": "Subagent driven pocket universe for resilient async agents",
+      "tags": ["subagent", "async", "orchestration", "parallel"],
+      "scope": ["project"],
+      "source": "https://github.com/spoons-and-mirrors/pocket-universe"
+    },
+    {
+      "name": "shell-strategy",
+      "description": "Avoid interactive shell commands that hang in non-TTY environments",
+      "tags": ["shell", "terminal", "reliability", "workflow"],
+      "scope": ["global"],
+      "source": "https://github.com/JRedeker/opencode-shell-strategy"
+    },
+    {
+      "name": "simple-memory",
+      "description": "Git-based persistent memory using daily logfmt files",
+      "tags": ["memory", "persistence", "collaboration", "git"],
+      "scope": ["project"],
+      "source": "https://github.com/cnicolov/opencode-plugin-simple-memory"
+    },
+    {
+      "name": "smart-title",
+      "description": "Auto-generates meaningful session titles using AI",
+      "tags": ["productivity", "session", "organization"],
+      "scope": ["global"],
+      "source": "https://github.com/Tarquinen/opencode-smart-title"
+    },
+    {
+      "name": "stop-slop",
+      "description": "Remove AI writing patterns from prose in docs, READMEs, and release notes",
+      "tags": ["writing", "editing", "docs", "quality", "prose"],
+      "scope": ["global"],
+      "source": "https://github.com/hardikpandya/stop-slop"
+    },
+    {
+      "name": "subtask2",
+      "description": "Orchestration system with granular flow control and parallel execution",
+      "tags": ["orchestration", "workflow", "automation", "tasks"],
+      "scope": ["project"],
+      "source": "https://github.com/spoons-and-mirrors/subtask2"
+    },
+    {
+      "name": "systematic-debugging",
+      "description": "Always find root cause before proposing fixes",
+      "tags": ["debugging", "troubleshooting", "workflow", "quality"],
+      "scope": ["global"],
+      "source": "https://github.com/obra/superpowers/tree/main/skills/systematic-debugging"
+    },
+    {
+      "name": "test-driven-development",
+      "description": "Write the test first, watch it fail, then write minimal code to pass",
+      "tags": ["testing", "tdd", "quality", "workflow"],
+      "scope": ["project"],
+      "source": "https://github.com/obra/superpowers/tree/main/skills/test-driven-development"
+    },
+    {
+      "name": "tokenscope",
+      "description": "Comprehensive token analysis and cost tracking",
+      "tags": ["tokens", "cost", "analysis", "reporting", "optimization"],
+      "scope": ["global"],
+      "source": "https://github.com/ramtinJ95/opencode-tokenscope"
+    },
+    {
+      "name": "vercel-react-best-practices",
+      "description": "React and Next.js performance optimization guidelines from Vercel Engineering",
+      "tags": ["react", "nextjs", "performance", "frontend", "optimization"],
+      "scope": ["project"],
+      "source": "https://github.com/vercel-labs/agent-skills/tree/main/skills/react-best-practices"
+    },
+    {
+      "name": "dependency-audit",
+      "description": "Scan dependencies for CVEs, outdated packages, license issues, and unused deps to produce a prioritized remediation list",
+      "tags": ["security", "dependencies", "audit", "maintenance", "quality"],
+      "scope": ["project"],
+      "source": "https://github.com/weisser-dev/awesome-opencode"
+    },
+    {
+      "name": "deploy",
+      "description": "Guide deployment processes including CI/CD pipeline creation, environment setup, and rollback procedures",
+      "tags": ["deploy", "devops", "ci-cd", "infrastructure", "workflow"],
+      "scope": ["project"],
+      "source": "https://github.com/weisser-dev/awesome-opencode"
+    },
+    {
+      "name": "docker-optimize",
+      "description": "Analyze Dockerfile and produce optimized version with multi-stage builds, layer caching, minimal base, and security hardening",
+      "tags": ["docker", "containers", "devops", "security", "optimization"],
+      "scope": ["project"],
+      "source": "https://github.com/weisser-dev/awesome-opencode"
+    },
+    {
+      "name": "env-setup",
+      "description": "Bootstrap developer environment by detecting project type, generating .env.example, and producing a Getting Started guide",
+      "tags": ["environment", "setup", "onboarding", "devtools", "documentation"],
+      "scope": ["project"],
+      "source": "https://github.com/weisser-dev/awesome-opencode"
+    },
+    {
+      "name": "error-triage",
+      "description": "Parse stack traces and error logs to identify root cause, find related code, and suggest fixes with severity classification",
+      "tags": ["debugging", "troubleshooting", "errors", "analysis", "workflow"],
+      "scope": ["global"],
+      "source": "https://github.com/weisser-dev/awesome-opencode"
+    },
+    {
+      "name": "git-release",
+      "description": "Create consistent releases with changelogs, version bumps, and release notes from git history",
+      "tags": ["git", "release", "versioning", "workflow", "collaboration"],
+      "scope": ["project"],
+      "source": "https://github.com/weisser-dev/awesome-opencode"
+    },
+    {
+      "name": "incident-postmortem",
+      "description": "Guide creation of blameless postmortem with timeline, root cause analysis, impact assessment, and action items",
+      "tags": ["incident", "postmortem", "sre", "reliability", "documentation"],
+      "scope": ["project"],
+      "source": "https://github.com/weisser-dev/awesome-opencode"
+    },
+    {
+      "name": "migration",
+      "description": "Plan and execute database or framework migrations with rollback strategies",
+      "tags": ["migration", "database", "schema", "devops", "workflow"],
+      "scope": ["project"],
+      "source": "https://github.com/weisser-dev/awesome-opencode"
+    },
+    {
+      "name": "performance-profile",
+      "description": "Analyze code for performance hotspots including complexity, N+1 queries, memory allocations, and caching opportunities",
+      "tags": ["performance", "optimization", "profiling", "analysis", "quality"],
+      "scope": ["project"],
+      "source": "https://github.com/weisser-dev/awesome-opencode"
+    },
+    {
+      "name": "pr-review",
+      "description": "Structured pull request review with checklist, security scan, and actionable feedback",
+      "tags": ["review", "quality", "collaboration", "workflow", "pr"],
+      "scope": ["project"],
+      "source": "https://github.com/weisser-dev/awesome-opencode"
+    },
+    {
+      "name": "test-patterns",
+      "description": "Generate tests following project conventions with proper patterns for unit, integration, and e2e testing",
+      "tags": ["testing", "patterns", "quality", "workflow", "tdd"],
+      "scope": ["project"],
+      "source": "https://github.com/weisser-dev/awesome-opencode"
+    }
+  ],
+  "agents": [
+    {
+      "name": "frontend-jr",
+      "description": "UI components and markup using DeepSeek V4 Flash",
+      "model": "deepseek/deepseek-v4-flash",
+      "tier": "free"
+    },
+    {
+      "name": "frontend-sr",
+      "description": "Complex frontend architecture, state management, performance",
+      "model": "deepseek/deepseek-v4-pro",
+      "tier": "paid"
+    },
+    {
+      "name": "accessibility-tester",
+      "description": "WCAG compliance auditing and inclusive design",
+      "model": "deepseek/deepseek-v4-flash",
+      "tier": "free"
+    },
+    {
+      "name": "backend",
+      "description": "Server-side APIs, business logic, auth middleware",
+      "model": "qwen/qwen3.7-plus",
+      "tier": "paid"
+    },
+    {
+      "name": "db-optimizer",
+      "description": "Query plans, indexes, schema design, connection pooling",
+      "model": "deepseek/deepseek-v4-flash",
+      "tier": "free"
+    },
+    {
+      "name": "docker-expert",
+      "description": "Multi-stage Dockerfiles, compose, container security",
+      "model": "deepseek/deepseek-v4-flash",
+      "tier": "free"
+    },
+    {
+      "name": "ci-pipeline",
+      "description": "CI/CD pipeline configuration (GitHub Actions, GitLab CI)",
+      "model": "deepseek/deepseek-v4-flash",
+      "tier": "free"
+    },
+    {
+      "name": "test-automator",
+      "description": "Unit, integration, and e2e test generation",
+      "model": "deepseek/deepseek-v4-flash",
+      "tier": "free"
+    },
+    {
+      "name": "code-reviewer",
+      "description": "Structured PR review for quality, security, and performance",
+      "model": "glm/glm-5.1",
+      "tier": "paid"
+    },
+    {
+      "name": "security-auditor",
+      "description": "IAM, encryption, network segmentation, compliance hardening",
+      "model": "deepseek/deepseek-v4-pro",
+      "tier": "paid"
+    },
+    {
+      "name": "performance-engineer",
+      "description": "Algorithmic complexity, N+1 queries, memory, caching",
+      "model": "glm/glm-5.2",
+      "tier": "paid"
+    },
+    {
+      "name": "refactorer",
+      "description": "Code refactoring preserving behavior, readability, maintainability",
+      "model": "glm/glm-5.1",
+      "tier": "paid"
+    },
+    {
+      "name": "error-detective",
+      "description": "Stack trace parsing, error pattern analysis, root cause",
+      "model": "deepseek/deepseek-v4-flash",
+      "tier": "free"
+    },
+    {
+      "name": "api-designer",
+      "description": "REST/GraphQL API design, OpenAPI specs, versioning",
+      "model": "deepseek/deepseek-v4-flash",
+      "tier": "free"
+    },
+    {
+      "name": "deployment-engineer",
+      "description": "Deployment strategies (rolling, blue/green, canary), rollback",
+      "model": "deepseek/deepseek-v4-flash",
+      "tier": "free"
+    },
+    {
+      "name": "kubernetes",
+      "description": "K8s manifests, helm charts, cluster configuration",
+      "model": "qwen/qwen3.6-plus",
+      "tier": "paid"
+    },
+    {
+      "name": "terraform",
+      "description": "Infrastructure-as-Code with Terraform/OpenTofu",
+      "model": "minimax/m3",
+      "tier": "paid"
+    },
+    {
+      "name": "migration",
+      "description": "Database schema migrations and framework upgrades",
+      "model": "deepseek/deepseek-v4-flash",
+      "tier": "free"
+    },
+    {
+      "name": "git-workflow",
+      "description": "Branching strategies, commit hygiene, conventional commits",
+      "model": "deepseek/deepseek-v4-flash",
+      "tier": "free"
+    },
+    {
+      "name": "prompt-engineer",
+      "description": "Prompt design, few-shot learning, chain-of-thought, evaluation",
+      "model": "mimo/mimo-v2.5-pro",
+      "tier": "paid"
+    },
+    {
+      "name": "docs-writer",
+      "description": "Documentation, ADRs, changelogs, postmortems, READMEs",
+      "model": "deepseek/deepseek-v4-flash",
+      "tier": "free"
+    }
+  ]
+}
