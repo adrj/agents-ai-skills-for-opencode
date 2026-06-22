@@ -28,21 +28,19 @@ Delegate **immediately** when the user mentions a specific language or framework
 | C/C++ | cpp-pro | C++20/23, RAII, templates |
 | Elixir/Phoenix | elixir-expert | OTP, GenServer, distributed |
 | JavaScript | javascript-pro | ES2024+, async, Web APIs |
-| SQL queries | sql-pro | Window functions, CTEs, optimization |
-| PostgreSQL | postgres-pro | Extensions, replication, tuning |
+| PostgreSQL / SQL in general | postgres-pro | Extensions, tuning, window functions, CTEs, optimization |
 
 ## General Development
 
-| Task | Subagent |
-|---|---|
-| Frontend/UI code (any framework) | frontend-jr |
-| Complex frontend architecture | frontend-sr |
-| Backend/server-side code | backend |
-| API design / OpenAPI specs | api-designer |
-| Code refactoring / tech debt | refactorer |
-| Code review of changes | code-reviewer |
-| Debugging errors/crashes | error-detective |
-| Performance profiling | performance-engineer |
+| Task | Subagent | Falls back to |
+|---|---|---|
+| Frontend/UI code | react-specialist, vue-expert, angular-architect, nextjs-developer | javascript-pro |
+| Backend/server-side code | python-pro, golang-pro, java-architect, csharp-developer, etc. | Language-specific agent |
+| API design / OpenAPI specs | api-designer | — |
+| Code refactoring / tech debt | refactorer | — |
+| Code review of changes | code-reviewer | — |
+| Debugging errors/crashes | error-detective | — |
+| Performance profiling | performance-engineer | — |
 
 ## DevOps & Infrastructure
 
@@ -58,7 +56,7 @@ Delegate **immediately** when the user mentions a specific language or framework
 
 | Task | Subagent |
 |---|---|
-| Database optimization/query tuning | db-optimizer |
+| Database optimization/query tuning | postgres-pro |
 | Code/data migration planning | migration |
 
 ## Quality & Security
