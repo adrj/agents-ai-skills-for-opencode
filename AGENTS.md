@@ -71,9 +71,18 @@ Delegate **immediately** when the user mentions a specific language or framework
 
 | Task | Subagent |
 |---|---|
-| Documentation/README | docs-writer |
+| Documentation/README | docs-writer, technical-writer |
 | Prompt engineering | prompt-engineer |
 | Git workflow/conflicts | git-workflow |
+
+## Business & Product
+
+| Task | Subagent |
+|---|---|
+| Requirements gathering, user stories, specs | business-analyst |
+| Product strategy, roadmap, feature prioritization | product-manager |
+| Project planning, risk tracking, timeline management | project-manager |
+| Technical writing, API docs, tutorials | technical-writer |
 
 ## Invocation Instructions
 
@@ -82,3 +91,4 @@ Delegate **immediately** when the user mentions a specific language or framework
 - For language-specific work, always delegate to the matching specialist
 - For error/bug investigation, use error-detective first before attempting fixes
 - For code review, always delegate to code-reviewer before merging
+- **CRITICAL**: After completing any major feature, refactor, or API change, delegate to project-manager to update documentation and project records
