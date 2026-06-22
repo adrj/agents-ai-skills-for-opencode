@@ -143,6 +143,31 @@ cp -r .opencode/ /path/to/your/project/
 
 OpenCode will auto-discover skills and agents on startup.
 
+### Activating Default Instructions
+
+This repo includes an `AGENTS.md` with general instructions that tell the agent to consider all available skills and subagents before handling requests. To activate it:
+
+**If `opencode.json` doesn't exist in your project root, create it:**
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": ["AGENTS.md"]
+}
+```
+
+**If it already exists but lacks `instructions`, add the field:**
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": ["AGENTS.md"],
+  // ... existing fields
+}
+```
+
+The `instructions` field accepts an array of file paths (relative to the config file). All referenced files are loaded into the system prompt before every request. You must restart opencode after changing config files.
+
 ### Using Subagents
 
 Subagents are placed in `.opencode/agents/`. OpenCode reads them automatically. Invoke them in chat:

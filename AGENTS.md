@@ -1,3 +1,9 @@
+# General Instructions
+
+Before responding to any request, first assess which available skills and subagents are relevant to the task at hand. Cross-reference the user's request against the specialized agents and skills defined in this file — if a specialist exists for the domain, language, or concern mentioned, delegate the work to them rather than handling it directly. Skills provide workflow instructions and should be loaded when the task matches their description. This ensures each task is handled by the most capable agent, producing higher quality results with less effort.
+
+When in doubt about which agent to use, prefer delegating to a specialist over handling the work yourself. Always check both the subagent tables below and the available skills list before starting any substantive work.
+
 # Agent Delegation Rules
 
 The following subagents are available. Delegate tasks to them based on the type of work requested.
