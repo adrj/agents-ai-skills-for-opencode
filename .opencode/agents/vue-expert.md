@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR any Vue.js code: Vue 3 Composition API expert for Pinia, Vue Router, and Nuxt patterns
 mode: subagent
-model: deepseek/deepseek-v4-flash
+model: opencode-go/deepseek-v4-flash
 temperature: 0.2
 permission:
   edit: allow

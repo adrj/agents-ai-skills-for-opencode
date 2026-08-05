@@ -1,7 +1,7 @@
 ---
 description: "YOU MUST USE THIS for product strategy, roadmap planning, and feature prioritization decisions: Product manager for vision, goals, and impact/effort analysis"
 mode: subagent
-model: qwen/qwen3.7-plus
+model: opencode-go/qwen3.7-plus
 temperature: 0.3
 permission:
   edit: deny

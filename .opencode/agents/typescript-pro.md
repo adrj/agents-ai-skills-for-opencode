@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR any TypeScript code: TypeScript specialist for strict typing, generics, utility types, and advanced type inference
 mode: subagent
-model: deepseek/deepseek-v4-flash
+model: opencode-go/deepseek-v4-flash
 temperature: 0.2
 permission:
   edit: allow

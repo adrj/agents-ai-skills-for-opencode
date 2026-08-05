@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR crafting or optimizing AI prompts: Prompt engineering specialist for LLM interaction patterns and system prompts
 mode: subagent
-model: deepseek/deepseek-v4-pro
+model: opencode-go/deepseek-v4-pro
 temperature: 0.5
 permission:
   skill:

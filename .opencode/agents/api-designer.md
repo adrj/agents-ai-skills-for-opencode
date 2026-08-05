@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR API design and OpenAPI specs: API design expert for REST, GraphQL, and contract-first development
 mode: subagent
-model: deepseek/deepseek-v4-flash
+model: opencode-go/deepseek-v4-pro
 temperature: 0.2
 permission:
   skill:

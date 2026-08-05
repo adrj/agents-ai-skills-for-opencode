@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR any Next.js projects: Next.js 14+ full-stack specialist for App Router, Server Actions, and ISR
 mode: subagent
-model: deepseek/deepseek-v4-pro
+model: opencode-go/deepseek-v4-pro
 temperature: 0.2
 permission:
   edit: allow

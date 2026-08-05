@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR performance profiling and optimization: Performance engineer for bottleneck analysis, algorithmic optimization, and caching
 mode: subagent
-model: deepseek/deepseek-v4-flash
+model: opencode-go/deepseek-v4-pro
 temperature: 0.2
 permission:
   skill:

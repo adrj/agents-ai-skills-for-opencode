@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR any Angular code: Angular 15+ enterprise patterns for signals, standalone components, and NgRx
 mode: subagent
-model: qwen/qwen3.6-plus
+model: opencode-go/qwen3.7-plus
 temperature: 0.2
 permission:
   edit: allow

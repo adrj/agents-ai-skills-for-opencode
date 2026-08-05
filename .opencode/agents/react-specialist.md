@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR any React/JSX code: React 18+ patterns specialist for hooks, server components, Suspense, and concurrent features
 mode: subagent
-model: deepseek/deepseek-v4-pro
+model: opencode-go/deepseek-v4-pro
 temperature: 0.2
 permission:
   edit: allow

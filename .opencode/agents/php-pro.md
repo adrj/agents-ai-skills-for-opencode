@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR any PHP code: PHP web development expert for PHP 8.x, Composer, PSR standards, and modern frameworks
 mode: subagent
-model: deepseek/deepseek-v4-flash
+model: opencode-go/deepseek-v4-flash
 temperature: 0.2
 permission:
   edit: allow

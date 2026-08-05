@@ -1,0 +1,27 @@
+{
+  "_comment": "Template de baseline para quality-gate. Gerado automaticamente na primeira execução do quality-check.js.",
+  "project": "{{PROJECT_NAME}}",
+  "frozen_at": "YYYY-MM-DDTHH:MM:SS.sssZ",
+  "metrics": {
+    "lint_errors": 0,
+    "lint_warnings": 0,
+    "lint_total": 0,
+    "duplication_percent": 0.0,
+    "test_coverage_percent": 0.0,
+    "files_over_limit": 0,
+    "largest_file": "",
+    "largest_file_lines": 0,
+    "max_file_lines": 500
+  },
+  "min_bar": {
+    "lint_errors": 0,
+    "duplication_percent": 3.0,
+    "complexity_per_function": 10,
+    "max_file_lines": 500,
+    "max_function_lines": 50
+  },
+  "rules": {
+    "allow_worsening": false,
+    "block_on_regression": true
+  }
+}

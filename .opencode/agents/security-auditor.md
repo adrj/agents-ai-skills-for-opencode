@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR security audits, vulnerability assessment, and threat modeling: Security engineer for IAM, encryption, network segmentation, and OWASP
 mode: subagent
-model: qwen/qwen3.7-plus
+model: opencode-go/deepseek-v4-pro
 temperature: 0.2
 permission:
   skill:

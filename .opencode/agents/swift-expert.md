@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR any Swift or iOS/macOS code: iOS/macOS specialist for SwiftUI, Combine, async/await, and app architecture
 mode: subagent
-model: glm/glm-5.1
+model: opencode-go/deepseek-v4-pro
 temperature: 0.2
 permission:
   edit: allow

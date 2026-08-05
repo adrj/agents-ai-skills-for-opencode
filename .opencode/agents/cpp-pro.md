@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR any C/C++ code: C++ performance expert for modern C++20/23, RAII, templates, and memory management
 mode: subagent
-model: glm/glm-5.1
+model: opencode-go/deepseek-v4-pro
 temperature: 0.2
 permission:
   edit: allow

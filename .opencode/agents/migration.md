@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR code or data migration planning and execution: Migration specialist for safe, reversible schema and code transformations
 mode: subagent
-model: deepseek/deepseek-v4-flash
+model: opencode/deepseek-v4-flash-free
 temperature: 0.2
 permission:
   skill:

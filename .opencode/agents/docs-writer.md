@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR writing documentation and README files: Technical writer for clear, comprehensive project documentation
 mode: subagent
-model: deepseek/deepseek-v4-pro
+model: opencode-go/deepseek-v4-pro
 temperature: 0.4
 permission:
   skill:

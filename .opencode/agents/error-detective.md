@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FIRST when investigating errors, bugs, or crashes: Systematic debugger specializing in root cause analysis and error triage
 mode: subagent
-model: deepseek/deepseek-v4-flash
+model: opencode/deepseek-v4-flash-free
 temperature: 0.2
 permission:
   skill:

@@ -1,7 +1,7 @@
 ---
 description: "YOU MUST USE THIS for writing or updating API docs, tutorials, guides, and READMEs: Technical writer for developer-facing documentation, examples, and onboarding materials"
 mode: subagent
-model: deepseek/deepseek-v4-flash
+model: opencode-go/deepseek-v4-flash
 temperature: 0.2
 permission:
   edit: allow

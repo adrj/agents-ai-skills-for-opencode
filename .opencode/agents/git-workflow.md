@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR git operations, branching strategy, and merge conflict resolution: Git workflow expert for version control best practices
 mode: subagent
-model: deepseek/deepseek-v4-flash
+model: opencode/deepseek-v4-flash-free
 temperature: 0.2
 permission:
   skill:

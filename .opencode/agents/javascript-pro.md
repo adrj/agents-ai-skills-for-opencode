@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR any JavaScript code: JavaScript expert for ES2024+, async patterns, module systems, and Web APIs
 mode: subagent
-model: deepseek/deepseek-v4-flash
+model: opencode-go/deepseek-v4-flash
 temperature: 0.2
 permission:
   edit: allow

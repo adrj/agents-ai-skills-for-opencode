@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR any Java or JVM code: Enterprise Java architect for Spring patterns, JVM tuning, and design patterns
 mode: subagent
-model: qwen/qwen3.7-plus
+model: opencode-go/deepseek-v4-pro
 temperature: 0.2
 permission:
   edit: allow

@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR Terraform infrastructure-as-code: IaC expert for Terraform modules, state management, and cloud resource provisioning
 mode: subagent
-model: deepseek/deepseek-v4-flash
+model: opencode/deepseek-v4-flash-free
 temperature: 0.2
 permission:
   skill:

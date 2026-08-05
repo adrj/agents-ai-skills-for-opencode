@@ -1,0 +1,13 @@
+{
+  "_comment": "Meta ideal de qualidade. Use como referência para melhorias graduais via ratchet.",
+  "metrics": {
+    "lint_errors": 0,
+    "lint_warnings": 0,
+    "duplication_percent": 0.0,
+    "test_coverage_percent": 80.0,
+    "files_over_limit": 0,
+    "max_file_lines": 300,
+    "max_function_lines": 40,
+    "complexity_per_function": 5
+  }
+}

@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR Kubernetes manifests, Helm charts, and cluster management: K8s expert for orchestration, scaling, and service mesh configuration
 mode: subagent
-model: qwen/qwen3.7-plus
+model: opencode/deepseek-v4-flash-free
 temperature: 0.2
 permission:
   skill:

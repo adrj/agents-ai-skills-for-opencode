@@ -81,6 +81,13 @@ Delegate **immediately** when the user mentions a specific language or framework
 | Prompt engineering | prompt-engineer |
 | Git workflow/conflicts | git-workflow |
 
+## Specification & Quality
+
+| Task | Subagent | Model |
+|---|---|---|
+| Technical specification / RFC generation | spec-writer | opencode-go/deepseek-v4-pro |
+| Code quality fixes (lint, duplication, coverage) | qa-engineer | opencode/deepseek-v4-flash-free |
+
 ## Business & Product
 
 | Task | Subagent |
@@ -98,3 +105,34 @@ Delegate **immediately** when the user mentions a specific language or framework
 - For error/bug investigation, use error-detective first before attempting fixes
 - For code review, always delegate to code-reviewer before merging
 - **CRITICAL**: After completing any major feature, refactor, or API change, delegate to project-manager to update documentation and project records
+
+# Auto-Invocation Rules (Skills)
+
+The following skills trigger automatically based on context. Do NOT wait for the user to manually invoke them.
+
+## Before Writing Code
+- If the user describes a new feature or change **without an existing spec/RFC** → invoke `grilling`
+- After `grilling` completes successfully → invoke `rfc-write` to generate the specification
+- If `CONTEXT.md` does not exist → invoke `domain-modeling` to build the glossary
+
+## During Implementation
+- When making a **business rule decision** that affects domain behavior → pause and ask the user (do NOT silently assume domain rules) — this is the `grilling` pattern
+- When a new domain concept is named → invoke `domain-modeling` to update `CONTEXT.md`
+
+## Before Committing / Creating PRs
+- After implementing a feature → invoke `quality-gate` to verify no regressions
+- If quality gate fails → delegate fixes to `qa-engineer` for simple issues, `refactorer` for structural issues
+- After fixes → re-run `quality-gate` until it passes
+
+## For Existing Projects (First-Time Setup)
+- User asks to set up quality baseline or audit existing project → invoke `architecture-audit`
+- Audit generates report → ask user which candidates to explore → `grilling` on selected candidate → `rfc-write` for RFCs retroactively
+
+## Model Tier Strategy
+
+| Tier | Model | Used For | Cost |
+|------|-------|----------|------|
+| Free | `opencode/deepseek-v4-flash-free` | Mechanical fixes, lint, DevOps config | $0 |
+| Go Flash | `opencode-go/deepseek-v4-flash` | Standard development, language agents | Low |
+| Go Pro | `opencode-go/deepseek-v4-pro` | Heavy analysis, specs, complex frameworks | Medium |
+| Go Qwen | `opencode-go/qwen3.7-plus` | Strategy, product, planning | Medium |

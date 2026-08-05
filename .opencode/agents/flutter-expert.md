@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR any Flutter/Dart code: Flutter 3+ cross-platform mobile specialist for widgets, state management, and animations
 mode: subagent
-model: glm/glm-5.1
+model: opencode-go/deepseek-v4-pro
 temperature: 0.2
 permission:
   edit: allow

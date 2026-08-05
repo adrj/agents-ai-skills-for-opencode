@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR any Go code: Go concurrency specialist for goroutines, channels, interfaces, and idiomatic Go patterns
 mode: subagent
-model: deepseek/deepseek-v4-flash
+model: opencode-go/deepseek-v4-flash
 temperature: 0.2
 permission:
   edit: allow

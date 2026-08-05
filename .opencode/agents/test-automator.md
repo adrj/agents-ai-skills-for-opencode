@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR test automation and test infrastructure: Test engineer for unit, integration, E2E tests and coverage optimization
 mode: subagent
-model: deepseek/deepseek-v4-flash
+model: opencode/deepseek-v4-flash-free
 temperature: 0.2
 permission:
   skill:

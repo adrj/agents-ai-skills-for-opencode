@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR any Rust code: Systems programming expert for ownership, lifetimes, unsafe Rust, and async runtimes
 mode: subagent
-model: glm/glm-5.1
+model: opencode-go/deepseek-v4-pro
 temperature: 0.2
 permission:
   edit: allow

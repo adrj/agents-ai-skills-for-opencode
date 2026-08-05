@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR deployment, release, and progressive delivery strategies: Deployment engineer for blue/green, canary, and zero-downtime rollouts
 mode: subagent
-model: qwen/qwen3.6-plus
+model: opencode/deepseek-v4-flash-free
 temperature: 0.2
 permission:
   skill:

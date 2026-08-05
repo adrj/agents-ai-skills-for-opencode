@@ -2,6 +2,24 @@
 
 Curated skills and subagents for [OpenCode](https://opencode.ai), adapted from the best community repositories.
 
+> **Usando como skeleton?** Veja [`SKELETON.md`](./SKELETON.md) para instruções de como usar este repositório como template para novos projetos.
+
+---
+
+## Development Guidelines
+
+Standardized development guidelines in [`docs/guidelines/`](./docs/guidelines/). All documents follow a consistent format with YAML frontmatter and generic placeholders (`{{VARIAVEL}}`) for easy project adaptation.
+
+| Document | Category | Description |
+|----------|----------|-------------|
+| [AI_GUIDELINES.md](./docs/guidelines/AI_GUIDELINES.md) | `ai` | Main AI development guide — stack, architecture, conventions |
+| [BACKEND_GUIDELINES.md](./docs/guidelines/BACKEND_GUIDELINES.md) | `backend` | Backend patterns — Clean Architecture, services, DTOs |
+| [FRONTEND_GUIDELINES.md](./docs/guidelines/FRONTEND_GUIDELINES.md) | `frontend` | Frontend patterns — components, pages, API services |
+| [BRANCHING_STRATEGY.md](./docs/guidelines/BRANCHING_STRATEGY.md) | `process` | Git Flow, Conventional Commits, PRs, versioning |
+| [LOG_SESSION_GUIDELINES.md](./docs/guidelines/LOG_SESSION_GUIDELINES.md) | `process` | Session log format and templates |
+| [PROJECT_STRUCTURE.md](./docs/guidelines/PROJECT_STRUCTURE.md) | `project` | Ecosystem structure, environment setup, troubleshooting |
+| [FEATURE_PLANNING_GUIDELINES.md](./docs/guidelines/FEATURE_PLANNING_GUIDELINES.md) | `process` | Feature planning — ADRs, plans, sprints, checklists |
+
 ---
 
 ## Agents
@@ -36,6 +54,12 @@ OpenCode discovers skills via `SKILL.md` with YAML frontmatter.
 | `test-driven-development` | [obra/superpowers](https://github.com/obra/superpowers) | `testing`, `tdd` | Red-green-refactor cycle |
 | `interface-design` | [Dammyjay93/interface-design](https://github.com/Dammyjay93/interface-design) | `ui`, `design` | Persistent UI design decisions across sessions |
 | `finishing-a-branch` | [obra/superpowers](https://github.com/obra/superpowers) | `git`, `workflow` | PR readiness checklist |
+| `grilling` | [mattpocock/skills](https://github.com/mattpocock/skills) | `specification`, `interview` | Auto-triggered relentless interview about plans |
+| `grill-me` | [mattpocock/skills](https://github.com/mattpocock/skills) | `specification`, `interview` | Manual trigger for grilling session |
+| `rfc-write` | Inspired by Lucas Montano | `specification`, `architecture` | Language-agnostic technical specifications |
+| `quality-gate` | Inspired by Lucas Montano | `quality`, `ci` | Code quality ratchet — block regressions |
+| `domain-modeling` | [mattpocock/skills](https://github.com/mattpocock/skills) | `domain`, `ddd`, `glossary` | Build CONTEXT.md glossary during grilling |
+| `architecture-audit` | Inspired by mattpocock/skills | `architecture`, `audit` | Scan existing project for improvement candidates |
 | `firecrawl-web` | [Firecrawl CLI](https://docs.firecrawl.dev/sdks/cli) | `web`, `search` | Web scraping and search via CLI |
 | `dev-cli-tools` | curated (dev.to, awesome-cli-apps) | `cli`, `devtools` | Essential CLI tools per stack |
 | `agent-memory` | [awesome-opencode/agent-memory](https://github.com/joshuadavidthomas/opencode-agent-memory) | `memory`, `persistence` | Self-editable persistent memory blocks |
@@ -97,6 +121,7 @@ OpenCode discovers skills via `SKILL.md` with YAML frontmatter.
 | `refactorer` | Behavior-preserving code refactoring |
 | `rust-engineer` | Ownership, lifetimes, unsafe |
 | `security-auditor` | IAM, encryption, compliance hardening |
+| `spec-writer` | RFC generation, DDD contracts (Go Pro) |
 | `spring-boot-engineer` | WebFlux, Security, Data JPA |
 | `swift-expert` | SwiftUI, Combine, async/await |
 | `technical-writer` | Developer docs, tutorials, onboarding |
@@ -104,6 +129,20 @@ OpenCode discovers skills via `SKILL.md` with YAML frontmatter.
 | `test-automator` | Unit, integration, e2e tests |
 | `typescript-pro` | Strict typing, generics, inference |
 | `vue-expert` | Composition API, Pinia |
+| `qa-engineer` | Lint fixes, deduplication, coverage (Free tier) |
+
+---
+
+## Model Tiers (OpenCode Go + Zen)
+
+All agents use models provided through OpenCode Go and OpenCode Zen:
+
+| Tier | Model | Agents | Cost |
+|------|-------|--------|------|
+| Free | `opencode/deepseek-v4-flash-free` | qa-engineer, refactorer, error-detective, test-automator, accessibility-tester, migration, ci-pipeline, git-workflow, docker-expert, kubernetes, terraform, deployment-engineer | $0 |
+| Go Flash | `opencode-go/deepseek-v4-flash` | python-pro, typescript-pro, javascript-pro, golang-pro, php-pro, django-developer, fastapi-developer, elixir-expert, vue-expert, kotlin-specialist, csharp-developer, postgres-pro, technical-writer | Low |
+| Go Pro | `opencode-go/deepseek-v4-pro` | code-reviewer, spec-writer, docs-writer, security-auditor, api-designer, prompt-engineer, performance-engineer, react-specialist, nextjs-developer, java-architect, spring-boot-engineer, cpp-pro, rust-engineer, swift-expert, flutter-expert | Medium |
+| Go Qwen | `opencode-go/qwen3.7-plus` | product-manager, project-manager, business-analyst, angular-architect | Medium |
 
 ---
 
@@ -579,8 +618,18 @@ agents-skills-for-opencode/
 │   └── README.md
 ├── docs/
 │   ├── compatibility-notes.md
-│   └── project-types-guide.md
-└── README.md
+│   ├── project-types-guide.md
+│   └── guidelines/
+│       ├── README.md
+│       ├── AI_GUIDELINES.md
+│       ├── BACKEND_GUIDELINES.md
+│       ├── FRONTEND_GUIDELINES.md
+│       ├── BRANCHING_STRATEGY.md
+│       ├── LOG_SESSION_GUIDELINES.md
+│       ├── PROJECT_STRUCTURE.md
+│       └── FEATURE_PLANNING_GUIDELINES.md
+├── README.md
+└── SKELETON.md
 ```
 
 ---

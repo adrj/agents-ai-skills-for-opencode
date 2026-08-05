@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS for thorough code reviews of any changes: Senior code reviewer analyzing security, performance, and maintainability
 mode: subagent
-model: deepseek/deepseek-v4-pro
+model: opencode-go/deepseek-v4-pro
 temperature: 0.4
 permission:
   skill:

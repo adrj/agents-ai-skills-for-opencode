@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR PostgreSQL-specific features and tuning: PostgreSQL specialist for advanced queries, extensions, performance tuning, and replication
 mode: subagent
-model: deepseek/deepseek-v4-flash
+model: opencode-go/deepseek-v4-flash
 temperature: 0.2
 permission:
   edit:

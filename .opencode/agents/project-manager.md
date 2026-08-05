@@ -1,7 +1,7 @@
 ---
 description: "YOU MUST USE THIS at every major change to update docs, track progress, and manage scope: Project manager for timelines, risk tracking, stakeholder coordination, and documentation guardianship"
 mode: subagent
-model: qwen/qwen3.7-plus
+model: opencode-go/qwen3.7-plus
 temperature: 0.2
 permission:
   edit: allow

@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR FastAPI projects: FastAPI async Python API expert for Pydantic, dependency injection, and WebSockets
 mode: subagent
-model: deepseek/deepseek-v4-flash
+model: opencode-go/deepseek-v4-flash
 temperature: 0.2
 permission:
   edit: allow

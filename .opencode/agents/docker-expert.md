@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR Dockerfiles, docker-compose, and containerization: Docker expert for secure, efficient container images and multi-stage builds
 mode: subagent
-model: deepseek/deepseek-v4-flash
+model: opencode/deepseek-v4-flash-free
 temperature: 0.2
 permission:
   skill:

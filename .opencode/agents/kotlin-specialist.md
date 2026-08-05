@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR any Kotlin code: Modern JVM language expert for coroutines, Kotlin Multiplatform, and DSLs
 mode: subagent
-model: qwen/qwen3.6-plus
+model: opencode-go/deepseek-v4-flash
 temperature: 0.2
 permission:
   edit: allow

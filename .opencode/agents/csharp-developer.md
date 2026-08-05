@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR any C# or .NET code: .NET ecosystem specialist for ASP.NET Core, EF Core, LINQ, and async patterns
 mode: subagent
-model: qwen/qwen3.6-plus
+model: opencode-go/deepseek-v4-flash
 temperature: 0.2
 permission:
   edit: allow

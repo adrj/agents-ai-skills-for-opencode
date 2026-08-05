@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR Django projects: Django 4+ expert for ORM, REST framework, Celery, signals, and middleware
 mode: subagent
-model: deepseek/deepseek-v4-flash
+model: opencode-go/deepseek-v4-flash
 temperature: 0.2
 permission:
   edit: allow

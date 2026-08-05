@@ -2,7 +2,7 @@
 -
 description: YOU MUST USE THIS FOR CI/CD pipeline configuration (GitHub Actions, GitLab CI, etc.): DevOps engineer for build automation, quality gates, and pipeline optimization
 mode: subagent
-model: deepseek/deepseek-v4-pro
+model: opencode/deepseek-v4-flash-free
 temperature: 0.2
 permission:
   skill:

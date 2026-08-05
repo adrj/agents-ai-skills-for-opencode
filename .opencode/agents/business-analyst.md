@@ -1,7 +1,7 @@
 ---
 description: "YOU MUST USE THIS FIRST when gathering requirements, writing specs, or analyzing business processes: Business analyst for requirements engineering, user stories, and process analysis"
 mode: subagent
-model: qwen/qwen3.6-plus
+model: opencode-go/qwen3.7-plus
 temperature: 0.2
 permission:
   edit: deny
