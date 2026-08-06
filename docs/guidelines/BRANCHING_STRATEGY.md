@@ -151,11 +151,12 @@ Cada repositório contém `.github/pull_request_template.md` com:
 
 ## Checklist
 - [ ] Código segue os guidelines do projeto
-- [ ] Testes unitários passando
+- [ ] Testes unitários passando (TDD — test written first)
 - [ ] Testes de integração passando (se aplicável)
-- [ ] Documentação atualizada (se aplicável)
+- [ ] Quality gate passou sem regressões
+- [ ] Documentação atualizada (RFC, ADR, CONTEXT.md)
 - [ ] Nenhum warning do linter
-- [ ] Commits organizados e mensagens claras
+- [ ] Commits organizados e mensagens claras (Conventional Commits)
 
 ## Testes Realizados
 [Descrever testes manuais se necessário]

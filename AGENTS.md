@@ -165,8 +165,39 @@ invoke quality-gate
 ### Phase 4: Review (before merge)
 
 ```
-invoke pr-review (or delegate to code-reviewer agent)
-└── after approval → delegate to project-manager to update docs/records
+Branch completa, pronto para PR
+├── invoke finishing-a-branch (pre-PR checklist)
+│   ├── Tests pass?
+│   ├── Quality gate passed?
+│   ├── No secrets/logs committed?
+│   ├── Commits organized + conventional format?
+│   └── Docs updated?
+│
+├── Create PR with template (description, type, checklist, screenshots)
+│
+├── invoke pr-review (delegate to code-reviewer agent)
+│   ├── Security scan (iam, secrets, injection)
+│   ├── Performance review (N+1, allocations, caching)
+│   ├── Architecture compliance (does it follow the spec/RFC?)
+│   ├── Test adequacy (are edge cases covered?)
+│   └── Returns: approved / changes requested / rejected
+│
+├── If changes requested → agent fixes → re-review
+│
+├── CI pipeline runs automatically:
+│   ├── lint → test → build → quality-gate
+│   └── All must pass before merge allowed
+│
+├── Merge rules (see BRANCHING_STRATEGY.md):
+│   ├── Feature/fix → squash merge (clean history)
+│   ├── Release → merge commit (preserve context)
+│   ├── Hotfix → merge to main AND back to develop
+│   └── Minimum 1 approval required
+│
+└── After merge:
+    ├── Delete source branch
+    ├── If release → tag with semantic version
+    └── Delegate to project-manager to update docs/roadmap
 ```
 
 ## Skill Trigger Reference
@@ -182,6 +213,8 @@ invoke pr-review (or delegate to code-reviewer agent)
 | Quality gate fails with lint/simple issues | Delegate to `qa-engineer` (free tier) | ✅ |
 | Quality gate fails with structural issues | Delegate to `refactorer` | ✅ |
 | Code review needed before merge | `pr-review` or delegate to `code-reviewer` | ✅ |
+| Branch complete, ready for PR | `finishing-a-branch` (pre-PR checklist) | ✅ |
+| Merge conflicts during PR | Delegate to `git-workflow` | ✅ |
 | Major feature/refactor/API change complete | Delegate to `project-manager` | ✅ |
 | First time setting up quality in existing project | `architecture-audit` (scan + baseline) | ✅ |
 | Bug, crash, unexpected behavior | `systematic-debugging` + delegate to `error-detective` | ✅ |
