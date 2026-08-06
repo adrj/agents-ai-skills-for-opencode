@@ -4,6 +4,25 @@ Before responding to any request, first assess which available skills and subage
 
 When in doubt about which agent to use, prefer delegating to a specialist over handling the work yourself. Always check both the subagent tables below and the available skills list before starting any substantive work.
 
+# Global Rules
+
+## Temporary Files
+
+**ALWAYS** use `<project_root>/tmp/` for temporary files, never `/tmp/` or the OS temp directory. Create it if it doesn't exist. This keeps project artifacts contained and avoids polluting the system.
+
+```bash
+# Correct
+mkdir -p tmp/
+echo "data" > tmp/output.json
+
+# Wrong — never do this
+echo "data" > /tmp/output.json
+```
+
+## Working Directory
+
+Always run commands from the project root (`/path/to/project/`). Use `workdir` parameter in bash commands to change directory, never `cd` in chained commands.
+
 # Agent Delegation Rules
 
 The following subagents are available. Delegate tasks to them based on the type of work requested.
