@@ -131,6 +131,10 @@ Is this a NEW project or a first interaction?
 ├── Check CONTEXT.md exists
 │   ├── NO  → invoke domain-modeling (build glossary from codebase + README)
 │   └── YES → ready for Phase 1
+├── Check docs/guidelines/ exists
+│   ├── NO  → Copy from ~/.config/opencode/guidelines/ (global template)
+│   │        └── Offer to customize placeholders {{VARIAVEL}} for this project
+│   └── YES → ready for Phase 1
 └── Check quality-gate/baseline.json exists
     ├── NO  → invoke quality-gate (auto-audit → fix → freeze baseline)
     └── YES → ready for Phase 1

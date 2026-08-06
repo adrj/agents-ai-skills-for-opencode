@@ -49,7 +49,26 @@ Ou localmente:
 **O que o agente faz na primeira execução:**
 1. Detecta `baseline.json` ausente → `quality-gate` (auto-audit + freeze)
 2. Detecta `CONTEXT.md` ausente → `domain-modeling` (constrói glossário)
-3. Projeto pronto para desenvolvimento spec-first
+3. Detecta `docs/guidelines/` ausente → copia do template global + pede para customizar placeholders
+4. Projeto pronto para desenvolvimento spec-first
+
+---
+
+## Guidelines — Padrões de Desenvolvimento
+
+Os 7 documentos em `docs/guidelines/` são templates com placeholders `{{VARIAVEL}}`. Ao criar um novo projeto, o agente pergunta se você quer customizá-los:
+
+| Documento | Categoria | O que define |
+|-----------|-----------|-------------|
+| `AI_GUIDELINES.md` | `ai` | Stack, arquitetura, fluxo de trabalho para IAs |
+| `BACKEND_GUIDELINES.md` | `backend` | Clean Architecture, entities, services, DTOs |
+| `FRONTEND_GUIDELINES.md` | `frontend` | Componentes, páginas, API services, auth |
+| `BRANCHING_STRATEGY.md` | `process` | Git Flow, Conventional Commits, PRs, versionamento |
+| `LOG_SESSION_GUIDELINES.md` | `process` | Formato de documentação de sessões |
+| `PROJECT_STRUCTURE.md` | `project` | Estrutura do ecossistema, portas, troubleshooting |
+| `FEATURE_PLANNING_GUIDELINES.md` | `process` | Planejamento de features, ADRs, sprints |
+
+**Template global**: `~/.config/opencode/guidelines/` — o agente copia e customiza automaticamente.
 
 ---
 

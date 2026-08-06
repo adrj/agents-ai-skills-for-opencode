@@ -64,13 +64,13 @@ else
   echo "  ⏭️  .github/ já existe"
 fi
 
-# 6. docs/guidelines
+# 6. docs/guidelines (copy from global template, then customize)
 if [ ! -d "$TARGET/docs/guidelines" ]; then
-  if [ -d "$HOME/Workspace/agents-ai-skills-for-opencode/docs/guidelines" ]; then
-    echo "  ✅ Copiando docs/guidelines/"
-    mkdir -p "$TARGET/docs"
-    cp -r "$HOME/Workspace/agents-ai-skills-for-opencode/docs/guidelines" "$TARGET/docs/guidelines"
-  fi
+  echo "  ✅ Copiando docs/guidelines/ (template com placeholders)"
+  mkdir -p "$TARGET/docs"
+  cp -r "$GLOBAL/guidelines" "$TARGET/docs/guidelines"
+  echo "     ⚠️  Substitua {{VARIAVEL}} pelos valores do seu projeto"
+  echo "     Veja docs/guidelines/README.md para a lista de placeholders"
 else
   echo "  ⏭️  docs/guidelines já existe"
 fi
