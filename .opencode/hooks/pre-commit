@@ -1,0 +1,27 @@
+#!/bin/sh
+# Pre-commit hook: Lint + Format checks
+# Use this as a template for new projects
+
+echo "🔍 Running pre-commit checks..."
+
+# Run lint if available
+if [ -f "package.json" ] && grep -q '"lint"' package.json; then
+  echo "   Running lint..."
+  npm run lint
+  if [ $? -ne 0 ]; then
+    echo "❌ Lint failed"
+    exit 1
+  fi
+fi
+
+# Run format check if available
+if [ -f "package.json" ] && grep -q '"format:check"' package.json; then
+  echo "   Running format check..."
+  npm run format:check
+  if [ $? -ne 0 ]; then
+    echo "❌ Format check failed"
+    exit 1
+  fi
+fi
+
+echo "✅ Pre-commit checks passed"

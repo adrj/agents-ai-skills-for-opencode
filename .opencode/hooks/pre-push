@@ -1,0 +1,17 @@
+#!/bin/sh
+# Pre-push hook: Quality gate check
+# Runs quality gate before pushing to GitHub
+
+echo "🚀 Running pre-push checks..."
+
+# Run quality gate if available
+if [ -f ".opencode/skills/quality-gate/scripts/quality-check.js" ]; then
+  echo "   Running quality gate..."
+  node .opencode/skills/quality-gate/scripts/quality-check.js
+  if [ $? -ne 0 ]; then
+    echo "❌ Quality gate failed"
+    exit 1
+  fi
+fi
+
+echo "✅ Pre-push checks passed"
