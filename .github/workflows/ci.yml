@@ -1,14 +1,16 @@
 name: CI Pipeline
 
 on:
+  workflow_dispatch:
   pull_request:
     branches: [main, develop]
   push:
     branches: [main, develop]
 
 jobs:
-  quality-gate:
+  test:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
 
@@ -26,7 +28,21 @@ jobs:
       - name: Test with coverage
         run: npm test -- --coverage
 
-      - name: Quality gate
+  quality-gate:
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install jscpd
+        run: npm install -g jscpd
+
+      - name: Run quality gate
         run: node .opencode/skills/quality-gate/scripts/quality-check.js
 
       - name: Upload artifacts
@@ -37,3 +53,4 @@ jobs:
           path: |
             coverage/
             quality-gate/
+            tmp/
