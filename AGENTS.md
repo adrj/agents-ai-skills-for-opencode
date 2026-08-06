@@ -157,8 +157,10 @@ Is there a spec/RFC for this feature?
 Does the spec define clear contracts?
 ├── YES → invoke test-driven-development first
 │        └── Write the test → watch it fail → write minimal code → watch it pass
-│        └── Delegate implementation to language-specific agent
-└── NO  → invoke grilling on the ambiguous parts first
+    │        └── Delegate implementation to language-specific agent
+    ├── UI/image work? → delegate image analysis to image-analyzer (cheap multimodal)
+    │                   → always prefer browser_snapshot (text, $0) over screenshots
+    └── NO  → invoke grilling on the ambiguous parts first
 ```
 
 ### Phase 3: Quality Gate (before commit/PR)
@@ -260,3 +262,4 @@ Branch completa, pronto para PR
 3. **Pro only when needed**: specs, security audit, complex framework analysis → `spec-writer`, `code-reviewer`, `security-auditor`
 4. **Reuse context**: after grilling generates decisions, pass them to rfc-write — don't re-interview
 5. **Batch quality fixes**: if quality-gate finds multiple violations, fix all before re-running
+6. **Text over image**: always use `browser_snapshot` (free) before screenshots. Delegate unavoidable images to `image-analyzer` (cheap multimodal) — never process images on the main agent
