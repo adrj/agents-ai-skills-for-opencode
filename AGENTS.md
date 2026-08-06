@@ -247,6 +247,9 @@ Branch completa, pronto para PR
 | UI component, dashboard, admin panel | `interface-design` (design system consistency) | ✅ |
 | Image/screenshot analysis, UI review | Delegate to `image-analyzer` (cheap multimodal) | ✅ |
 | User explicitly asks for interview | `grill-me` (manual trigger) | Manual |
+| Long session with many tool calls | `dynamic-context-pruning` (optimize tokens) | ✅ |
+| Expensive session, cost concern | `context-analysis` or `tokenscope` | ✅ |
+| Cross-session learning/memory | `napkin` or `agent-memory` | ✅ |
 
 ## Model Tier Strategy
 
@@ -265,3 +268,6 @@ Branch completa, pronto para PR
 4. **Reuse context**: after grilling generates decisions, pass them to rfc-write — don't re-interview
 5. **Batch quality fixes**: if quality-gate finds multiple violations, fix all before re-running
 6. **Text over image**: always use `browser_snapshot` (free) before screenshots. Delegate unavoidable images to `image-analyzer` (cheap multimodal) — never process images on the main agent
+7. **Session efficiency**: long sessions with many tool calls → invoke `dynamic-context-pruning` to reduce token consumption
+8. **Cost monitoring**: expensive sessions → invoke `context-analysis` or `tokenscope` to track token usage and costs
+9. **Persistent memory**: cross-session decisions → invoke `napkin` or `agent-memory` to persist learnings and avoid re-discovering patterns
