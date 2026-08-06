@@ -94,7 +94,26 @@ Os documentos contêm exemplos de código ilustrativos (Java/React). Adapte-os p
 
 Atualize `PROJECT_STRUCTURE.md` e diagramas de diretórios nos outros documentos para refletir a estrutura real do seu projeto.
 
-### Passo 5: Remover ou Adaptar Documentos
+### Passo 5: Configurar GitHub
+
+O skeleton inclui arquivos de configuração do GitHub:
+
+```
+.github/
+├── pull_request_template.md    # Template de PR com checklist de qualidade
+└── workflows/
+    └── ci.yml                  # Pipeline: lint → test → quality-gate
+```
+
+**Branch protection rules** (configurar manualmente no GitHub):
+
+Em Settings → Branches → Add rule para `main` e `develop`:
+- Require a pull request before merging
+- Require approvals (mínimo 1)
+- Require status checks to pass: `quality-gate`
+- Do not allow bypassing the above settings
+
+### Passo 6: Remover ou Adaptar Documentos
 
 Nem todos os documentos se aplicam a todos os projetos:
 
