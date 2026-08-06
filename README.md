@@ -132,6 +132,7 @@ OpenCode discovers skills via `SKILL.md` with YAML frontmatter.
 | `typescript-pro` | Strict typing, generics, inference |
 | `vue-expert` | Composition API, Pinia |
 | `qa-engineer` | Lint fixes, deduplication, coverage (Free tier) |
+| `web-scraper` | Browser automation, web scraping, downloads (Free tier) |
 
 ---
 
@@ -142,6 +143,7 @@ All agents use models provided through OpenCode Go and OpenCode Zen:
 | Tier | Model | Agents | Cost |
 |------|-------|--------|------|
 | Free | `opencode/deepseek-v4-flash-free` | qa-engineer, refactorer, error-detective, test-automator, accessibility-tester, migration, ci-pipeline, git-workflow, docker-expert, kubernetes, terraform, deployment-engineer | $0 |
+| Free | `opencode/mimo-v2.5-free` | web-scraper (browser automation via Playwright) | $0 |
 | Go Flash | `opencode-go/deepseek-v4-flash` | python-pro, typescript-pro, javascript-pro, golang-pro, php-pro, django-developer, fastapi-developer, elixir-expert, vue-expert, kotlin-specialist, csharp-developer, postgres-pro, technical-writer | Low |
 | Go Pro | `opencode-go/deepseek-v4-pro` | code-reviewer, spec-writer, docs-writer, security-auditor, api-designer, prompt-engineer, performance-engineer, react-specialist, nextjs-developer, java-architect, spring-boot-engineer, cpp-pro, rust-engineer, swift-expert, flutter-expert | Medium |
 | Go Qwen | `opencode-go/qwen3.7-plus` | product-manager, project-manager, business-analyst, angular-architect | Medium |

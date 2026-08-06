@@ -58,12 +58,13 @@ Delegate **immediately** when the user mentions a specific language or framework
 | CI/CD pipelines | ci-pipeline |
 | Deployment/release | deployment-engineer |
 
-## Data & Migrations
+## Data & Web
 
 | Task | Subagent |
 |---|---|
 | Database optimization/query tuning | postgres-pro |
 | Code/data migration planning | migration |
+| Web scraping, navigation, downloads | web-scraper |
 
 ## Quality & Security
 
