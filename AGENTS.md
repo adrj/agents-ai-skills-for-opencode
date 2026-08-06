@@ -117,17 +117,23 @@ Before ANY significant action, evaluate the situation using this decision tree. 
 ### Phase 0: Project Assessment (runs once per project or when context shifts)
 
 ```
-Is this a NEW project or FEATURE?
-├── NEW project → architecture-audit (scan structure, establish baseline)
-└── NEW feature  → go to Phase 1
-
-Does quality-gate/baseline.json exist?
-├── NO  → invoke quality-gate (it will auto-audit and freeze baseline)
-└── YES → ready for Phase 1
-
-Does CONTEXT.md exist?
-├── NO  → invoke domain-modeling (build glossary from codebase)
-└── YES → ready for Phase 1
+Is this a NEW project or a first interaction?
+├── Check if .opencode/ exists
+│   ├── NO  → "Este projeto não tem o skeleton configurado. Quer que eu configure?"
+│   │        └── Copy .opencode/ from skeleton (agents, skills, manifest)
+│   └── YES → continue
+├── Check if opencode.json exists
+│   ├── NO  → Create opencode.json pointing to AGENTS.md
+│   └── YES → continue
+├── Check if .github/ exists
+│   ├── NO  → Create .github/pull_request_template.md + .github/workflows/ci.yml
+│   └── YES → continue
+├── Check CONTEXT.md exists
+│   ├── NO  → invoke domain-modeling (build glossary from codebase + README)
+│   └── YES → ready for Phase 1
+└── Check quality-gate/baseline.json exists
+    ├── NO  → invoke quality-gate (auto-audit → fix → freeze baseline)
+    └── YES → ready for Phase 1
 ```
 
 ### Phase 1: Specification (always before code)
