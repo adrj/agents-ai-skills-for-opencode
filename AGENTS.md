@@ -129,6 +129,9 @@ Is this a NEW project or a first interaction?
 ├── Check if opencode.json exists
 │   ├── NO  → Create opencode.json pointing to AGENTS.md
 │   └── YES → continue
+├── Check if project needs monorepo structure
+│   ├── YES → invoke monorepo-setup (create backend/frontend/docs/devops)
+│   └── NO → continue
 ├── Check if .github/ exists
 │   ├── NO  → Create .github/pull_request_template.md + .github/workflows/ci.yml
 │   └── YES → continue
@@ -228,6 +231,7 @@ Branch completa, pronto para PR
 |---------------|-----------------|-------|
 | User describes new feature/change with no spec | `grilling` or `grill-with-docs` | ✅ |
 | User has existing domain docs or wants docs built | `grill-with-docs` (interview + CONTEXT.md + ADRs) | ✅ |
+| User needs monorepo structure or project scaffolding | `monorepo-setup` (backend/frontend/docs/devops) | ✅ |
 | Grilling session completes | `rfc-write` (generate specification) | ✅ |
 | `CONTEXT.md` missing at project start | `domain-modeling` (build glossary) | ✅ |
 | New domain concept named during conversation | `domain-modeling` (update CONTEXT.md) | ✅ |

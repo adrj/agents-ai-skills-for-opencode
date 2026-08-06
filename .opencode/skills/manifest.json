@@ -653,6 +653,20 @@
         "project"
       ],
       "source": "Inspired by Lucas Montano"
+    },
+    {
+      "name": "monorepo-setup",
+      "description": "Create a monorepo structure (backend, frontend, docs, devops) in the project root",
+      "tags": [
+        "setup",
+        "monorepo",
+        "structure",
+        "scaffolding"
+      ],
+      "scope": [
+        "project"
+      ],
+      "source": "Custom skill"
     }
   ],
   "agents": [
