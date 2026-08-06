@@ -1,5 +1,5 @@
 {
-  "_comment": "Template de baseline para quality-gate. Gerado automaticamente na primeira execução do quality-check.js.",
+  "_comment": "Template de baseline para quality-gate. Congela métricas atuais — nenhuma pode piorar.",
   "project": "{{PROJECT_NAME}}",
   "frozen_at": "YYYY-MM-DDTHH:MM:SS.sssZ",
   "metrics": {
@@ -26,17 +26,18 @@
     "total_files": 0
   },
   "thresholds": {
-    "coverage_lines": 60,
-    "coverage_statements": 60,
-    "coverage_functions": 60,
-    "coverage_branches": 50,
-    "duplication_percentage": 10,
+    "coverage_lines": 0,
+    "coverage_statements": 0,
+    "coverage_functions": 0,
+    "coverage_branches": 0,
+    "duplication_percentage": 3,
     "lint_errors": 0,
-    "checkstyle_violations": 50,
-    "pmd_violations": 20,
-    "spotbugs_warnings": 10,
+    "checkstyle_violations": 10,
+    "pmd_violations": 10,
+    "spotbugs_warnings": 5,
     "cve_critical": 0,
     "cve_high": 0,
     "files_over_limit": 0
-  }
+  },
+  "_note": "Thresholds iniciais. Atualizar conforme projeto melhora (abordagem ratchet)."
 }

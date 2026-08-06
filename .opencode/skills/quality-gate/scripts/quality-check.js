@@ -652,9 +652,12 @@ function main() {
     };
     saveBaseline(frozen);
     console.log(`\n✅ Baseline frozen at ${baselinePath}`);
+    console.log('   No threshold checks on first run — baseline established.');
+    console.log('\n✅ Quality gate PASSED (first run)');
+    return;
   }
 
-  // ── Check thresholds ──────────────────────────────────────────────────────
+  // ── Check thresholds (only on subsequent runs) ────────────────────────────
   const violations = [];
   if (current.lint_errors > thresholds.lint_errors) violations.push(`❌ Lint errors: ${current.lint_errors} (max: ${thresholds.lint_errors})`);
   if (current.files_over_limit > thresholds.files_over_limit) violations.push(`❌ Oversized files (>1400): ${current.files_over_limit}`);
