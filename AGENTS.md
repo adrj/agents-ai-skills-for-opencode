@@ -112,7 +112,8 @@ The following skills trigger automatically based on context. Do NOT wait for the
 
 ## Before Writing Code
 - If the user describes a new feature or change **without an existing spec/RFC** → invoke `grilling`
-- After `grilling` completes successfully → invoke `rfc-write` to generate the specification
+- If the user wants documentation generated alongside the interview → invoke `grill-with-docs` (combines `grilling` + `domain-modeling`)
+- After `grilling` or `grill-with-docs` completes successfully → invoke `rfc-write` to generate the specification
 - If `CONTEXT.md` does not exist → invoke `domain-modeling` to build the glossary
 
 ## During Implementation

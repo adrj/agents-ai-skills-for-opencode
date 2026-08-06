@@ -56,6 +56,7 @@ OpenCode discovers skills via `SKILL.md` with YAML frontmatter.
 | `finishing-a-branch` | [obra/superpowers](https://github.com/obra/superpowers) | `git`, `workflow` | PR readiness checklist |
 | `grilling` | [mattpocock/skills](https://github.com/mattpocock/skills) | `specification`, `interview` | Auto-triggered relentless interview about plans |
 | `grill-me` | [mattpocock/skills](https://github.com/mattpocock/skills) | `specification`, `interview` | Manual trigger for grilling session |
+| `grill-with-docs` | [mattpocock/skills](https://github.com/mattpocock/skills) | `specification`, `docs`, `domain` | Grilling + CONTEXT.md + ADRs built simultaneously |
 | `rfc-write` | Inspired by Lucas Montano | `specification`, `architecture` | Language-agnostic technical specifications |
 | `quality-gate` | Inspired by Lucas Montano | `quality`, `ci` | Code quality ratchet — block regressions |
 | `domain-modeling` | [mattpocock/skills](https://github.com/mattpocock/skills) | `domain`, `ddd`, `glossary` | Build CONTEXT.md glossary during grilling |
