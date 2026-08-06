@@ -68,6 +68,20 @@ gh pr diff  # ver o que foi alterado
 4. **Respostas em português**: Comentários no PR devem ser em português brasileiro.
 5. **Resolva conversas**: Após endereçar um comentário, marque a conversa como resolvida (`gh pr review --comment --body "Resolvido em <commit>"`).
 
+## Otimização de Custo (Tokens)
+
+| Ação | Custo | Modelo |
+|------|-------|--------|
+| `gh pr checks` / `gh pr view` | **Zero tokens** | CLI local |
+| `gh pr diff` (ler mudanças) | **Zero tokens** | CLI local |
+| Ler logs de CI | **Zero tokens** | CLI local |
+| Corrigir lint/estilo | **Grátis** | `@qa-engineer` (free) |
+| Corrigir coverage gap | **Grátis** | `@test-automator` (free) |
+| Refatorar arquivo grande | **Baixo** | `@refactorer` (flash) |
+| Só delegar a Pro se for inevitável | **Médio** | `@code-reviewer` (pro) |
+
+**Estratégia**: Zero-AI primeiro → free tier para mecânico → flash para estrutural → pro só se inevitável.
+
 ## Exemplo de Loop
 
 ```
