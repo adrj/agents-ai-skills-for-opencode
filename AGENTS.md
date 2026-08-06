@@ -41,6 +41,7 @@ Delegate **immediately** when the user mentions a specific language or framework
 | Task | Subagent | Falls back to |
 |---|---|---|
 | Frontend/UI code | react-specialist, vue-expert, angular-architect, nextjs-developer | javascript-pro |
+| Image/screenshot review, visual QA | image-analyzer | — |
 | Backend/server-side code | python-pro, golang-pro, java-architect, csharp-developer, etc. | Language-specific agent |
 | API design / OpenAPI specs | api-designer | — |
 | Code refactoring / tech debt | refactorer | — |
@@ -240,6 +241,7 @@ Branch completa, pronto para PR
 | Quality gate fails with coverage gap | Delegate to `test-automator` (add missing tests) | ✅ |
 | Tests needed for new module/feature | `test-patterns` (follow project conventions) | ✅ |
 | UI component, dashboard, admin panel | `interface-design` (design system consistency) | ✅ |
+| Image/screenshot analysis, UI review | Delegate to `image-analyzer` (cheap multimodal) | ✅ |
 | User explicitly asks for interview | `grill-me` (manual trigger) | Manual |
 
 ## Model Tier Strategy
