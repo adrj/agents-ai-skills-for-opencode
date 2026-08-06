@@ -1,6 +1,55 @@
 # SKELETON.md — Usando Este Projeto como Template
 
-Este repositório foi projetado para servir como **skeleton reutilizável** — um ponto de partida completo para iniciar novos projetos com OpenCode, incluindo agentes de IA, skills, configurações e documentação padronizada.
+Este repositório foi projetado para servir como **skeleton reutilizável** — um ponto de partida completo para iniciar novos projetos com OpenCode.
+
+---
+
+## Instalação Rápida (Toda Máquina)
+
+Para disponibilizar skills, agents e instruções para **todos os projetos** nesta máquina:
+
+```bash
+# Clone o skeleton
+git clone https://github.com/adrj/agents-ai-skills-for-opencode.git ~/opencode-skeleton
+
+# Sincronize skills (novas) e agents (refatorados) para o config global
+cp -r ~/opencode-skeleton/.opencode/skills/grilling ~/.config/opencode/skills/
+cp -r ~/opencode-skeleton/.opencode/skills/grill-me ~/.config/opencode/skills/
+cp -r ~/opencode-skeleton/.opencode/skills/grill-with-docs ~/.config/opencode/skills/
+cp -r ~/opencode-skeleton/.opencode/skills/rfc-write ~/.config/opencode/skills/
+cp -r ~/opencode-skeleton/.opencode/skills/quality-gate ~/.config/opencode/skills/
+cp -r ~/opencode-skeleton/.opencode/skills/domain-modeling ~/.config/opencode/skills/
+cp -r ~/opencode-skeleton/.opencode/skills/architecture-audit ~/.config/opencode/skills/
+cp ~/opencode-skeleton/.opencode/agents/*.md ~/.config/opencode/agents/
+cp ~/opencode-skeleton/AGENTS.md ~/.config/opencode/AGENTS.md
+```
+
+**Resultado**: skills e agents disponíveis globalmente. Qualquer projeto herda o fluxo spec-first + quality gate.
+
+### Bootstrap de Novo Projeto (30 segundos)
+
+```bash
+# A partir de qualquer diretório
+bash <(curl -s https://raw.githubusercontent.com/adrj/agents-ai-skills-for-opencode/master/bootstrap.sh) /caminho/do/projeto
+```
+
+Ou localmente:
+```bash
+~/.config/opencode/skeleton-bootstrap /caminho/do/projeto
+```
+
+**O que o script faz:**
+- Cria `opencode.json` → aponta para `AGENTS.md`
+- Cria `AGENTS.md` → árvore de decisão sistêmica
+- Link simbólico `.opencode/agents` → global (sempre atualizado)
+- Link simbólico `.opencode/skills` → global (sempre atualizado)
+- Copia `.github/` → PR template + CI pipeline
+- Copia `docs/guidelines/` → padrões de desenvolvimento
+
+**O que o agente faz na primeira execução:**
+1. Detecta `baseline.json` ausente → `quality-gate` (auto-audit + freeze)
+2. Detecta `CONTEXT.md` ausente → `domain-modeling` (constrói glossário)
+3. Projeto pronto para desenvolvimento spec-first
 
 ---
 
