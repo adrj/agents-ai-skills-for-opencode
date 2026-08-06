@@ -1,0 +1,28 @@
+{
+  "project": "agents-ai-skills-for-opencode",
+  "frozen_at": "2026-08-06T02:03:14.509Z",
+  "metrics": {
+    "collected_at": "2026-08-06T02:03:14.509Z",
+    "lint_errors": 0,
+    "lint_warnings": 0,
+    "lint_total": 0,
+    "duplication_percent": 0,
+    "test_coverage_percent": 0,
+    "files_over_limit": 0,
+    "largest_file": ".opencode/skills/quality-gate/scripts/quality-check.js",
+    "largest_file_lines": 351,
+    "max_file_lines": 500
+  },
+  "min_bar": {
+    "lint_errors": 0,
+    "duplication_percent": 3,
+    "complexity_per_function": 10,
+    "max_file_lines": 500,
+    "max_function_lines": 50,
+    "test_coverage_percent": 0
+  },
+  "rules": {
+    "allow_worsening": false,
+    "block_on_regression": true
+  }
+}
