@@ -61,6 +61,7 @@ OpenCode discovers skills via `SKILL.md` with YAML frontmatter.
 | `quality-gate` | Inspired by Lucas Montano | `quality`, `ci` | Code quality ratchet — block regressions |
 | `domain-modeling` | [mattpocock/skills](https://github.com/mattpocock/skills) | `domain`, `ddd`, `glossary` | Build CONTEXT.md glossary during grilling |
 | `architecture-audit` | Inspired by mattpocock/skills | `architecture`, `audit` | Scan existing project for improvement candidates |
+| `babysit` | Inspired by Lucas Montano | `ci`, `review`, `automation` | Monitor PR — CI, reviews, quality in loop |
 | `firecrawl-web` | [Firecrawl CLI](https://docs.firecrawl.dev/sdks/cli) | `web`, `search` | Web scraping and search via CLI |
 | `dev-cli-tools` | curated (dev.to, awesome-cli-apps) | `cli`, `devtools` | Essential CLI tools per stack |
 | `agent-memory` | [awesome-opencode/agent-memory](https://github.com/joshuadavidthomas/opencode-agent-memory) | `memory`, `persistence` | Self-editable persistent memory blocks |

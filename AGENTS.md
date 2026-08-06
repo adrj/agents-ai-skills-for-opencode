@@ -185,6 +185,12 @@ Branch completa, pronto para PR
 │
 ├── Create PR with template (description, type, checklist, screenshots)
 │
+├── invoke babysit (agent monitors CI + reviews + quality in loop)
+│   ├── Watch CI: fail → fix → push → re-check
+│   ├── Watch reviews: comments → address → resolve
+│   ├── Watch quality-gate: regression → fix → push
+│   └── Max 3 iterations, then escalate to human
+│
 ├── invoke pr-review (delegate to code-reviewer agent)
 │   ├── Security scan (iam, secrets, injection)
 │   ├── Performance review (N+1, allocations, caching)
@@ -224,6 +230,7 @@ Branch completa, pronto para PR
 | Quality gate fails with structural issues | Delegate to `refactorer` | ✅ |
 | Code review needed before merge | `pr-review` or delegate to `code-reviewer` | ✅ |
 | Branch complete, ready for PR | `finishing-a-branch` (pre-PR checklist) | ✅ |
+| PR created, needs monitoring | `babysit` (watch CI + reviews + quality in loop) | ✅ |
 | Merge conflicts during PR | Delegate to `git-workflow` | ✅ |
 | Major feature/refactor/API change complete | Delegate to `project-manager` | ✅ |
 | First time setting up quality in existing project | `architecture-audit` (scan + baseline) | ✅ |
@@ -232,7 +239,6 @@ Branch completa, pronto para PR
 | Quality gate fails with coverage gap | Delegate to `test-automator` (add missing tests) | ✅ |
 | Tests needed for new module/feature | `test-patterns` (follow project conventions) | ✅ |
 | UI component, dashboard, admin panel | `interface-design` (design system consistency) | ✅ |
-| Branch complete, ready for PR | `finishing-a-branch` (pre-PR checklist) | ✅ |
 | User explicitly asks for interview | `grill-me` (manual trigger) | Manual |
 
 ## Model Tier Strategy
