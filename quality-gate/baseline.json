@@ -1,12 +1,12 @@
 {
   "project": "agents-ai-skills-for-opencode",
-  "frozen_at": "2026-08-06T20:59:17.563Z",
+  "frozen_at": "2026-08-06T21:08:57.872Z",
   "metrics": {
     "coverage_lines": 0,
     "coverage_statements": 0,
     "coverage_functions": 0,
     "coverage_branches": 0,
-    "duplication_percentage": 1.4534883720930232,
+    "duplication_percentage": 1.2626262626262625,
     "duplication_fragments": 1,
     "lint_errors": 0,
     "lint_warnings": 0,
@@ -21,7 +21,7 @@
     "complexity_avg": 0,
     "files_over_500": 1,
     "files_over_limit": 0,
-    "largest_file_lines": 689,
+    "largest_file_lines": 793,
     "total_files": 1
   },
   "thresholds": {

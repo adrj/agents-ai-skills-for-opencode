@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": "2026-08-06T21:08:57.871Z",
+    "old": {
+      "duplication_percentage": 5.026262626262625
+    },
+    "new": {
+      "duplication_percentage": 1.2626262626262625
+    },
+    "delta": {
+      "duplication_percentage": -3.7636363636363623
+    }
+  }
+]

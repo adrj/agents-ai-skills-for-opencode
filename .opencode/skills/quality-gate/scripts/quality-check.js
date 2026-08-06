@@ -60,6 +60,91 @@ function saveBaseline(data) {
   fs.writeFileSync(baselinePath, JSON.stringify(data, null, 2) + '\n');
 }
 
+const historyPath = path.join(projectRoot, 'quality-gate', 'history.json');
+
+function loadHistory() {
+  if (!fs.existsSync(historyPath)) return [];
+  try {
+    return JSON.parse(fs.readFileSync(historyPath, 'utf-8'));
+  } catch {
+    return [];
+  }
+}
+
+function saveHistory(history) {
+  const dir = path.dirname(historyPath);
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(historyPath, JSON.stringify(history, null, 2) + '\n');
+}
+
+function recordEvolution(oldMetrics, newMetrics) {
+  const history = loadHistory();
+  const entry = {
+    timestamp: new Date().toISOString(),
+    old: {},
+    new: {},
+    delta: {},
+  };
+
+  // Compare key metrics
+  const metricKeys = [
+    'coverage_lines', 'coverage_statements', 'coverage_functions', 'coverage_branches',
+    'duplication_percentage', 'duplication_fragments',
+    'lint_errors', 'checkstyle_violations', 'pmd_violations', 'spotbugs_warnings',
+    'cve_critical', 'cve_high',
+    'files_over_500', 'files_over_limit',
+  ];
+
+  for (const key of metricKeys) {
+    const oldVal = oldMetrics[key];
+    const newVal = newMetrics[key];
+    if (oldVal !== undefined && newVal !== undefined && oldVal !== newVal) {
+      entry.old[key] = oldVal;
+      entry.new[key] = newVal;
+      entry.delta[key] = newVal - oldVal;
+    }
+  }
+
+  // Only record if there are changes
+  if (Object.keys(entry.delta).length > 0) {
+    history.push(entry);
+    saveHistory(history);
+    return true;
+  }
+  return false;
+}
+
+// ─── Check if metrics improved ───────────────────────────────────────────────
+
+function checkImprovement(oldMetrics, newMetrics) {
+  // Higher is better
+  const higherIsBetter = [
+    'coverage_lines', 'coverage_statements', 'coverage_functions', 'coverage_branches',
+  ];
+
+  // Lower is better
+  const lowerIsBetter = [
+    'duplication_percentage', 'duplication_fragments',
+    'lint_errors', 'checkstyle_violations', 'pmd_violations', 'spotbugs_warnings',
+    'cve_critical', 'cve_high',
+    'files_over_500', 'files_over_limit',
+  ];
+
+  for (const key of higherIsBetter) {
+    const oldVal = oldMetrics[key] ?? 0;
+    const newVal = newMetrics[key] ?? 0;
+    if (newVal > oldVal) return true;
+  }
+
+  for (const key of lowerIsBetter) {
+    const oldVal = oldMetrics[key] ?? 0;
+    const newVal = newMetrics[key] ?? 0;
+    if (newVal < oldVal) return true;
+  }
+
+  return false;
+}
+
 // ─── Auto-detect project type ────────────────────────────────────────────────
 
 function detectProjectType() {
@@ -680,6 +765,25 @@ function main() {
     console.log('\n❌ Quality gate FAILED');
     for (const v of violations) console.log(`  ${v}`);
     process.exit(1);
+  }
+
+  // ── Auto-update baseline when metrics improve ──────────────────────────────
+  if (baseline) {
+    const improved = checkImprovement(baseline.metrics, current);
+    if (improved) {
+      // Record evolution before updating
+      recordEvolution(baseline.metrics, current);
+      
+      // Update baseline with new metrics
+      const updated = {
+        ...baseline,
+        frozen_at: new Date().toISOString(),
+        metrics: current,
+      };
+      saveBaseline(updated);
+      console.log('\n📈 Metrics improved — baseline updated');
+      console.log(`   History recorded at ${historyPath}`);
+    }
   }
 
   console.log('\n✅ Quality gate PASSED');
