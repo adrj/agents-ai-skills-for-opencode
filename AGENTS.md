@@ -139,12 +139,13 @@ Is there a spec/RFC for this feature?
 └── YES → read the spec and proceed to Phase 2
 ```
 
-### Phase 2: Implementation (code generation)
+### Phase 2: Implementation (test-driven, code generation)
 
 ```
 Does the spec define clear contracts?
-├── YES → delegate to language-specific agent (python-pro, typescript-pro, etc.)
-│        └── agent follows the spec as source of truth
+├── YES → invoke test-driven-development first
+│        └── Write the test → watch it fail → write minimal code → watch it pass
+│        └── Delegate implementation to language-specific agent
 └── NO  → invoke grilling on the ambiguous parts first
 ```
 
@@ -156,7 +157,8 @@ invoke quality-gate
 └── FAIL → check regression type:
     ├── Lint/format → delegate to qa-engineer (free, mechanical fix)
     ├── File size/complexity → delegate to refactorer (structural fix)
-    └── Coverage gap → delegate to test-automator (add missing tests)
+    ├── Coverage gap → delegate to test-automator (add missing tests)
+    │   └── Agent writes tests → re-run quality-gate
     └── After fixes → re-run quality-gate until PASS
 ```
 
@@ -184,6 +186,8 @@ invoke pr-review (or delegate to code-reviewer agent)
 | First time setting up quality in existing project | `architecture-audit` (scan + baseline) | ✅ |
 | Bug, crash, unexpected behavior | `systematic-debugging` + delegate to `error-detective` | ✅ |
 | New implementation (feature or bugfix) | `test-driven-development` (test-first cycle) | ✅ |
+| Quality gate fails with coverage gap | Delegate to `test-automator` (add missing tests) | ✅ |
+| Tests needed for new module/feature | `test-patterns` (follow project conventions) | ✅ |
 | UI component, dashboard, admin panel | `interface-design` (design system consistency) | ✅ |
 | Branch complete, ready for PR | `finishing-a-branch` (pre-PR checklist) | ✅ |
 | User explicitly asks for interview | `grill-me` (manual trigger) | Manual |

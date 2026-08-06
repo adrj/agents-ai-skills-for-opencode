@@ -58,8 +58,17 @@ node .opencode/skills/quality-gate/scripts/quality-check.js
 
 - **Checagem de métricas**: Script determinístico (zero AI — custo $0)
 - **Correção de lint/estilo**: `@qa-engineer` → `opencode/deepseek-v4-flash-free` (grátis)
-- **Refatoração estrutural**: `@refactorer` → `opencode/go/deepseek-v4-flash`
+- **Refatoração estrutural**: `@refactorer` → `opencode/deepseek-v4-flash`
+- **Cobertura de testes**: `@test-automator` → `opencode/deepseek-v4-flash-free` (grátis) — gera testes para branches não cobertos seguindo `test-patterns`
 - **Revisão final**: `@code-reviewer` → `opencode-go/deepseek-v4-pro`
+
+## Tratamento de Coverage Gap
+
+Quando o quality gate detecta queda na cobertura:
+1. Identifica os arquivos com branches não cobertos
+2. Delega para `@test-automator` gerar testes seguindo `test-patterns`
+3. Re-verifica cobertura após os testes serem adicionados
+4. Se cobertura ≥ baseline anterior → ✅ passa
 
 ## Auto-Disparo
 
