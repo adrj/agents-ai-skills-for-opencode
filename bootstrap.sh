@@ -75,6 +75,15 @@ else
   echo "  ⏭️  docs/guidelines já existe"
 fi
 
+# 7. quality-gate (baseline template)
+if [ ! -d "$TARGET/quality-gate" ]; then
+  echo "  ✅ Criando quality-gate/ (baseline template)"
+  mkdir -p "$TARGET/quality-gate"
+  cp "$GLOBAL/skills/quality-gate/templates/baseline.json" "$TARGET/quality-gate/baseline.json"
+else
+  echo "  ⏭️  quality-gate/ já existe"
+fi
+
 echo ""
 echo "✅ Bootstrap completo!"
 echo ""
