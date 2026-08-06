@@ -1,6 +1,7 @@
 ---
 name: grilling
-description: Interview the user relentlessly about a plan, decision, or idea until every branch of the design tree is resolved. Auto-triggers when the user describes a new feature, architecture change, or non-trivial implementation task without an existing spec. Also trigger before writing code for any feature that lacks a spec. Ask questions in Portuguese.
+description: Interview the user relentlessly about a plan, design, or decision until every branch of the design tree is resolved. Use when the user describes a new feature, architecture change, or any non-trivial implementation task. Also use when the agent needs to make domain decisions that affect business rules. Trigger phrases: "new feature", "implement", "add", "create", "change", "refactor", "design", "how should I", "what if". Ask questions in Portuguese.
+disable-model-invocation: false
 license: MIT
 compatibility: opencode
 min_version: 1.0.0

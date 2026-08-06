@@ -1,6 +1,7 @@
 ---
 name: domain-modeling
-description: Build and maintain the project's domain model — CONTEXT.md glossary, ubiquitous language, and ADR links. Auto-triggers during grilling sessions when new domain concepts are named or existing terms are sharpened.
+description: Build and maintain the project domain model — CONTEXT.md glossary, ubiquitous language, and ADR links. Use when CONTEXT.md is missing, or when new domain terms are introduced during conversation. Trigger phrases: "domain", "glossary", "ubiquitous language", "what does X mean", "define", new entity/concept names.
+disable-model-invocation: false
 license: MIT
 compatibility: opencode
 min_version: 1.0.0

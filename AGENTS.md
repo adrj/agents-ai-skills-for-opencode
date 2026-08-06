@@ -110,24 +110,83 @@ Delegate **immediately** when the user mentions a specific language or framework
 
 The following skills trigger automatically based on context. Do NOT wait for the user to manually invoke them.
 
-## Before Writing Code
-- If the user describes a new feature or change **without an existing spec/RFC** → invoke `grilling`
-- If the user wants documentation generated alongside the interview → invoke `grill-with-docs` (combines `grilling` + `domain-modeling`)
-- After `grilling` or `grill-with-docs` completes successfully → invoke `rfc-write` to generate the specification
-- If `CONTEXT.md` does not exist → invoke `domain-modeling` to build the glossary
+## Systemic Decision Tree
 
-## During Implementation
-- When making a **business rule decision** that affects domain behavior → pause and ask the user (do NOT silently assume domain rules) — this is the `grilling` pattern
-- When a new domain concept is named → invoke `domain-modeling` to update `CONTEXT.md`
+Before ANY significant action, evaluate the situation using this decision tree. Always prefer the spec-first path.
 
-## Before Committing / Creating PRs
-- After implementing a feature → invoke `quality-gate` to verify no regressions
-- If quality gate fails → delegate fixes to `qa-engineer` for simple issues, `refactorer` for structural issues
-- After fixes → re-run `quality-gate` until it passes
+### Phase 0: Project Assessment (runs once per project or when context shifts)
 
-## For Existing Projects (First-Time Setup)
-- User asks to set up quality baseline or audit existing project → invoke `architecture-audit`
-- Audit generates report → ask user which candidates to explore → `grilling` on selected candidate → `rfc-write` for RFCs retroactively
+```
+Is this a NEW project or FEATURE?
+├── NEW project → architecture-audit (scan structure, establish baseline)
+└── NEW feature  → go to Phase 1
+
+Does quality-gate/baseline.json exist?
+├── NO  → invoke quality-gate (it will auto-audit and freeze baseline)
+└── YES → ready for Phase 1
+
+Does CONTEXT.md exist?
+├── NO  → invoke domain-modeling (build glossary from codebase)
+└── YES → ready for Phase 1
+```
+
+### Phase 1: Specification (always before code)
+
+```
+Is there a spec/RFC for this feature?
+├── NO → invoke grill-with-docs (interview + build docs simultaneously)
+│        └── after completion → invoke rfc-write (generate formal spec)
+└── YES → read the spec and proceed to Phase 2
+```
+
+### Phase 2: Implementation (code generation)
+
+```
+Does the spec define clear contracts?
+├── YES → delegate to language-specific agent (python-pro, typescript-pro, etc.)
+│        └── agent follows the spec as source of truth
+└── NO  → invoke grilling on the ambiguous parts first
+```
+
+### Phase 3: Quality Gate (before commit/PR)
+
+```
+invoke quality-gate
+├── PASS → commit or create PR
+└── FAIL → check regression type:
+    ├── Lint/format → delegate to qa-engineer (free, mechanical fix)
+    ├── File size/complexity → delegate to refactorer (structural fix)
+    └── Coverage gap → delegate to test-automator (add missing tests)
+    └── After fixes → re-run quality-gate until PASS
+```
+
+### Phase 4: Review (before merge)
+
+```
+invoke pr-review (or delegate to code-reviewer agent)
+└── after approval → delegate to project-manager to update docs/records
+```
+
+## Skill Trigger Reference
+
+| Context Signal | Skill to Invoke | Auto? |
+|---------------|-----------------|-------|
+| User describes new feature/change with no spec | `grilling` or `grill-with-docs` | ✅ |
+| User has existing domain docs or wants docs built | `grill-with-docs` (interview + CONTEXT.md + ADRs) | ✅ |
+| Grilling session completes | `rfc-write` (generate specification) | ✅ |
+| `CONTEXT.md` missing at project start | `domain-modeling` (build glossary) | ✅ |
+| New domain concept named during conversation | `domain-modeling` (update CONTEXT.md) | ✅ |
+| Feature implementation complete | `quality-gate` (verify metrics) | ✅ |
+| Quality gate fails with lint/simple issues | Delegate to `qa-engineer` (free tier) | ✅ |
+| Quality gate fails with structural issues | Delegate to `refactorer` | ✅ |
+| Code review needed before merge | `pr-review` or delegate to `code-reviewer` | ✅ |
+| Major feature/refactor/API change complete | Delegate to `project-manager` | ✅ |
+| First time setting up quality in existing project | `architecture-audit` (scan + baseline) | ✅ |
+| Bug, crash, unexpected behavior | `systematic-debugging` + delegate to `error-detective` | ✅ |
+| New implementation (feature or bugfix) | `test-driven-development` (test-first cycle) | ✅ |
+| UI component, dashboard, admin panel | `interface-design` (design system consistency) | ✅ |
+| Branch complete, ready for PR | `finishing-a-branch` (pre-PR checklist) | ✅ |
+| User explicitly asks for interview | `grill-me` (manual trigger) | Manual |
 
 ## Model Tier Strategy
 
@@ -137,3 +196,11 @@ The following skills trigger automatically based on context. Do NOT wait for the
 | Go Flash | `opencode-go/deepseek-v4-flash` | Standard development, language agents | Low |
 | Go Pro | `opencode-go/deepseek-v4-pro` | Heavy analysis, specs, complex frameworks | Medium |
 | Go Qwen | `opencode-go/qwen3.7-plus` | Strategy, product, planning | Medium |
+
+## Cost Optimization Rules
+
+1. **Zero-AI steps first**: quality-check.js (deterministic) before delegating to any agent
+2. **Free tier for mechanical tasks**: lint fixes, formatting, simple duplication → `qa-engineer` ($0)
+3. **Pro only when needed**: specs, security audit, complex framework analysis → `spec-writer`, `code-reviewer`, `security-auditor`
+4. **Reuse context**: after grilling generates decisions, pass them to rfc-write — don't re-interview
+5. **Batch quality fixes**: if quality-gate finds multiple violations, fix all before re-running
