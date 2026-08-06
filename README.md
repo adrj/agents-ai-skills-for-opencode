@@ -103,6 +103,7 @@ OpenCode discovers skills via `SKILL.md` with YAML frontmatter.
 | `elixir-expert` | OTP, GenServer, distributed |
 | `error-detective` | Stack trace analysis, error patterns |
 | `fastapi-developer` | Pydantic, DI, WebSockets |
+| `file-ops` | File operations agent for copy, move, rename, delete |
 | `flutter-expert` | Widgets, state management |
 | `git-workflow` | Branching strategies, conventional commits |
 | `golang-pro` | Goroutines, channels, concurrency |
@@ -110,6 +111,7 @@ OpenCode discovers skills via `SKILL.md` with YAML frontmatter.
 | `javascript-pro` | ES2024+, async, Web APIs |
 | `kotlin-specialist` | Coroutines, KMP, DSLs |
 | `kubernetes` | K8s manifests, helm, cluster config |
+| `log-analyst` | Runtime, build, and application log analysis (Free tier) |
 | `migration` | SQL migrations with rollback |
 | `nextjs-developer` | App Router, Server Actions, ISR |
 | `performance-engineer` | Hot paths, N+1 queries, caching |
@@ -143,8 +145,8 @@ All agents use models provided through OpenCode Go and OpenCode Zen:
 
 | Tier | Model | Agents | Cost |
 |------|-------|--------|------|
-| Free | `opencode/deepseek-v4-flash-free` | qa-engineer, refactorer, error-detective, test-automator, accessibility-tester, migration, ci-pipeline, git-workflow, docker-expert, kubernetes, terraform, deployment-engineer | $0 |
-| Free | `opencode/mimo-v2.5-free` | web-scraper (browser automation via Playwright) | $0 |
+| Free | `opencode/deepseek-v4-flash-free` | qa-engineer, refactorer, error-detective, test-automator, accessibility-tester, migration, ci-pipeline, git-workflow, docker-expert, kubernetes, terraform, deployment-engineer, log-analyst | $0 |
+| Free | `opencode/mimo-v2.5-free` | web-scraper (browser automation via Playwright), file-ops | $0 |
 | Go Flash | `opencode-go/deepseek-v4-flash` | python-pro, typescript-pro, javascript-pro, golang-pro, php-pro, django-developer, fastapi-developer, elixir-expert, vue-expert, kotlin-specialist, csharp-developer, postgres-pro, technical-writer | Low |
 | Go Flash | `opencode-go/mimo-v2.5` | image-analyzer (multimodal — screenshots, UI review, visual QA) | Low |
 | Go Pro | `opencode-go/deepseek-v4-pro` | code-reviewer, spec-writer, docs-writer, security-auditor, api-designer, prompt-engineer, performance-engineer, react-specialist, nextjs-developer, java-architect, spring-boot-engineer, cpp-pro, rust-engineer, swift-expert, flutter-expert | Medium |

@@ -48,6 +48,8 @@ Delegate **immediately** when the user mentions a specific language or framework
 | Code review of changes | code-reviewer | — |
 | Debugging errors/crashes | error-detective | — |
 | Performance profiling | performance-engineer | — |
+| File operations (copy, move, rename, delete) | file-ops | — |
+| Log analysis (runtime, build, application) | log-analyst | — |
 
 ## DevOps & Infrastructure
 
