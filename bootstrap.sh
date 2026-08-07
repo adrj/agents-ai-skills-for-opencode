@@ -84,6 +84,52 @@ else
   echo "  ⏭️  quality-gate/ já existe"
 fi
 
+# 8. Git hooks (pre-commit + pre-push)
+if [ ! -d "$TARGET/.husky" ] && [ ! -d "$TARGET/.git/hooks" ]; then
+  echo "  ⏭️  Git hooks: nenhum sistema de hooks detectado"
+else
+  if [ ! -f "$TARGET/.husky/pre-commit" ]; then
+    echo "  ✅ Criando .husky/pre-commit (lint + format + tests)"
+    mkdir -p "$TARGET/.husky"
+    cp "$GLOBAL/skills/quality-gate/hooks/pre-commit" "$TARGET/.husky/pre-commit"
+    chmod +x "$TARGET/.husky/pre-commit"
+  else
+    echo "  ⏭️  .husky/pre-commit já existe"
+  fi
+
+  if [ ! -f "$TARGET/.husky/pre-push" ]; then
+    echo "  ✅ Criando .husky/pre-push (quality gate)"
+    cp "$GLOBAL/skills/quality-gate/hooks/pre-push" "$TARGET/.husky/pre-push"
+    chmod +x "$TARGET/.husky/pre-push"
+  else
+    echo "  ⏭️  .husky/pre-push já existe"
+  fi
+fi
+
+# 9. husky + lint-staged (Node.js projects only)
+if [ -f "$TARGET/package.json" ]; then
+  echo "  📦 Detectado projeto Node.js"
+
+  # Install husky + lint-staged if not present
+  if ! grep -q '"husky"' "$TARGET/package.json" 2>/dev/null; then
+    echo "  ✅ Instalando husky + lint-staged + commitlint"
+    cd "$TARGET"
+    npm install --save-dev husky lint-staged @commitlint/cli @commitlint/config-conventional 2>/dev/null || true
+
+    # Initialize husky
+    npx husky init 2>/dev/null || true
+
+    # Add prepare script to package.json
+    if ! grep -q '"prepare"' "$TARGET/package.json"; then
+      sed -i 's/"preview"/"preview",\n    "prepare": "husky"/' "$TARGET/package.json" 2>/dev/null || true
+    fi
+
+    echo "     ✅ husky + lint-staged + commitlint instalados"
+  else
+    echo "  ⏭️  husky já configurado"
+  fi
+fi
+
 echo ""
 echo "✅ Bootstrap completo!"
 echo ""
@@ -91,5 +137,9 @@ echo "O que o agente fará na primeira execução:"
 echo "  1. Detectar que baseline.json não existe → quality-gate (auto-audit)"
 echo "  2. Detectar que CONTEXT.md não existe → domain-modeling (glossary)"
 echo "  3. Projeto pronto para desenvolvimento com fluxo spec-first"
+echo ""
+echo "Git hooks instalados:"
+echo "  - pre-commit: lint + format + unit tests"
+echo "  - pre-push: quality gate check"
 echo ""
 echo "Execute: cd $TARGET && opencode"
