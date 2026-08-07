@@ -17,23 +17,39 @@ SKELETON="$GLOBAL/skeleton-bootstrap"
 echo "🚀 Bootstrapping OpenCode skeleton em: $TARGET"
 echo ""
 
-# 1. opencode.json
+# 1. opencode.json + AGENTS.md
 if [ ! -f "$TARGET/opencode.json" ]; then
   echo "  ✅ Criando opencode.json"
-  cat > "$TARGET/opencode.json" << 'EOF'
+  
+  # Check if AGENTS.md exists locally
+  if [ -f "$TARGET/AGENTS.md" ]; then
+    # Local AGENTS.md exists - use relative path
+    cat > "$TARGET/opencode.json" << 'EOF'
 {
   "$schema": "https://opencode.ai/config.json",
   "instructions": ["AGENTS.md"]
 }
 EOF
+    echo "  ℹ️  Usando AGENTS.md local"
+  else
+    # No local AGENTS.md - use global path
+    cat > "$TARGET/opencode.json" << EOF
+{
+  "\$schema": "https://opencode.ai/config.json",
+  "instructions": ["~/.config/opencode/AGENTS.md"]
+}
+EOF
+    echo "  ℹ️  Usando AGENTS.md global (sem cópia)"
+  fi
 else
   echo "  ⏭️  opencode.json já existe"
 fi
 
-# 2. AGENTS.md (link or copy from global)
+# 2. AGENTS.md (only copy if local doesn't exist)
 if [ ! -f "$TARGET/AGENTS.md" ]; then
-  echo "  ✅ Copiando AGENTS.md (modo systemico)"
+  echo "  ✅ Copiando AGENTS.md do global"
   cp "$GLOBAL/AGENTS.md" "$TARGET/AGENTS.md"
+  echo "  ℹ️  AGENTS.md copiado para o projeto"
 else
   echo "  ⏭️  AGENTS.md já existe"
 fi
